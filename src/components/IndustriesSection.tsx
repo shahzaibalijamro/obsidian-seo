@@ -6,12 +6,12 @@ export default function IndustriesSection() {
                 <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop">
                     <div className="text-center mb-16">
                         <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface mb-6">
-                            Industries We Serve</h2>
+                            Industries We Work With</h2>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                         <div
                             className="glass-panel px-4 py-6 rounded-2xl text-center hover:bg-surface-variant/50 transition-colors cursor-default">
-                            <p className="font-headline-md sm:text-lg text-body-md text-on-surface">FinTech</p>
+                            <p className="font-headline-md my-auto sm:text-lg text-body-md text-on-surface">FinTech</p>
                         </div>
                         <div
                             className="glass-panel px-4 py-6 rounded-2xl text-center hover:bg-surface-variant/50 transition-colors cursor-default">

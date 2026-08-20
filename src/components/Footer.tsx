@@ -7,8 +7,7 @@ export default function Footer() {
                     <div className="flex flex-col items-center md:items-start">
                         <a className="font-display-lg text-2xl sm:text-headline-md font-bold text-on-surface block mb-6 tracking-tighter"
                             href="#">OBSIDIAN</a>
-                        <p className="font-body-md text-on-surface-variant mb-8 text-sm max-w-xs">Engineering digital dominance
-                            through uncompromising artistry and logic.</p>
+                        <p className="font-body-md text-on-surface-variant mb-8 text-sm max-w-xs">A digital marketing agency in Saudi Arabia helping businesses grow through search, social media, content, and technology built for the local market.</p>
                         <div className="flex gap-4">
                             <a href="#" className="text-on-surface-variant hover:text-primary transition-colors">
                                 <span className="material-symbols-outlined">work</span>
@@ -37,8 +36,7 @@ export default function Footer() {
 
                     </div>
 
-                    <div className="flex flex-col space-y-4">
-                        <p className="font-label-md sm:block hidden text-on-surface mb-2 uppercase tracking-wider"><br /></p>
+                    <div className="flex flex-col space-y-4 md:pt-10">
                         <a className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300"
                             href="/services/software-development">Software Development</a>
                         <a className="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300"

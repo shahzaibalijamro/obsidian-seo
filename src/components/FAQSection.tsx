@@ -3,36 +3,36 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What is your typical engagement size and project minimum?",
-    answer: "We typically partner with mid-market to enterprise organizations on engagements starting at $50,000. This ensures we can allocate the senior-level strategic and engineering resources required to deliver the high-impact results our clients expect."
+    question: "How much does it cost to work with Obsidian Digital?",
+    answer: "Our pricing depends on the scope, service mix, and level of resource required. Most mid-market engagements start from SAR 185,000. We are happy to review your requirements and provide a clear, itemised proposal. If you are looking for a top digital marketing agency in Saudi Arabia that is transparent about pricing, we will always give you a straight answer."
   },
   {
-    question: "Do you offer post-launch support and maintenance plans?",
-    answer: "Yes, we provide ongoing maintenance and performance optimization to ensure your platform scales securely."
+    question: "Do you offer ongoing support once a project is live?",
+    answer: "Yes. We can provide ongoing support after launch depending on your requirements. This can include performance optimisation, SEO, marketing support, technical improvements, software maintenance, and other services needed to support long-term growth."
   },
   {
-    question: "How do you measure success and ROI?",
-    answer: "We establish clear KPIs upfront, focusing on conversion rates, user engagement, and measurable business growth."
+    question: "How do you track and report on performance?",
+    answer: "We agree on the key objectives and success metrics at the beginning of each engagement, then track performance against them. Reporting focuses on meaningful business outcomes rather than vanity metrics, so you can clearly see what is working and where improvements are needed."
   },
   {
-    question: "What is the typical timeline for a custom software project?",
-    answer: "Most custom projects take 3-6 months from initial discovery to final deployment, depending on complexity."
+    question: "How long does a typical project take to complete?",
+    answer: "Project timelines depend on the scope, complexity, and services involved. A focused marketing engagement may have a different timeline from a website, application, or custom software project. During the strategy stage, we define the expected milestones and delivery schedule."
   },
   {
-    question: "Who owns the intellectual property and code?",
-    answer: "Upon final payment, you retain 100% ownership of all intellectual property and custom code."
+    question: "Who owns the work, code, and creative assets after delivery?",
+    answer: "Ownership and usage rights are agreed as part of the project scope and contract. We make these terms clear before work begins so there is no uncertainty about what happens to your website, software, creative assets, and other deliverables after delivery."
   },
   {
-    question: "What does the team composition look like?",
-    answer: "Your dedicated team includes a strategist, UX/UI designer, senior engineers, and a project manager."
+    question: "Who will be working on my account day to day?",
+    answer: "Your engagement is handled by experienced professionals throughout the project. The team involved depends on the services and expertise your project requires, with the work structured around your specific objectives and priorities."
   },
   {
-    question: "Can you integrate with our existing internal tech teams?",
-    answer: "Absolutely. We routinely co-develop with internal teams, adhering to your established Git workflows and CI/CD pipelines."
+    question: "Can you work alongside our existing marketing or development team?",
+    answer: "Yes. We can work alongside an existing internal marketing, development, or technology team. Our approach is designed to complement your existing capabilities where useful, whether you need specialist expertise, additional delivery capacity, or support with a specific project."
   },
   {
-    question: "What are your security protocols and data privacy standards?",
-    answer: "We build with security-first architecture, ensuring SOC2 compliance, data encryption at rest, and regular vulnerability scanning."
+    question: "How do you approach data privacy and information security?",
+    answer: "We treat data privacy and information security as an important part of every engagement. The specific requirements and safeguards depend on the nature of the project, the systems involved, and the type of information being handled. These considerations are discussed during project planning."
   }
 ];
 
@@ -47,7 +47,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="font-body-lg text-on-surface-variant">
-            Find answers to frequently asked questions about our process, pricing, and how we partner with brands to drive digital growth.
+            Common questions about working with us, how we structure engagements, and what to expect throughout the process.
           </p>
         </div>
         <div className="space-y-4">

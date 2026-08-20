@@ -56,7 +56,7 @@ export default function CaseStudiesSection() {
                         <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface mb-4">
                             Featured Case Studies
                         </h2>
-                        <p className="font-body-lg text-on-surface-variant">Fluid solutions driving tangible outcomes.</p>
+                        <p className="font-body-lg text-on-surface-variant">A snapshot of what we have built and the results it has produced.</p>
                     </div>
                     <a className="hidden md:flex font-label-md text-primary items-center gap-2 hover:text-on-surface transition-colors"
                         href="/case-studies">View All Work <span className="material-symbols-outlined text-sm">arrow_forward</span></a>

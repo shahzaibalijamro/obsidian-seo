@@ -59,13 +59,8 @@ export default function Header() {
     ];
 
     const locations: LocationLink[] = [
-        { label: "London", icon: "location_city" },
-        { label: "Birmingham", icon: "location_city" },
-        { label: "Manchester", icon: "location_city" },
-        { label: "Leeds", icon: "location_city" },
-        { label: "Liverpool", icon: "location_city" },
-        { label: "Sheffield", icon: "location_city" },
-        { label: "Bristol", icon: "location_city" },
+        { label: "Riyadh", icon: "location_city" },
+        { label: "Jeddah", icon: "location_city" },
     ];
 
     const navLinks = [
@@ -151,7 +146,7 @@ export default function Header() {
                         <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 ease-out translate-y-2 group-hover:translate-y-0">
                             <div className="rounded-3xl p-4 w-[320px] bg-surface/95 backdrop-blur-2xl border border-line shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
                                 <div className="px-3 py-2 mb-2 border-b border-line-subtle">
-                                    <p className="font-label-md text-primary uppercase tracking-wider text-xs">Top Cities in England</p>
+                                    <p className="font-label-md text-primary uppercase tracking-wider text-xs">Top Cities in Saudi Arabia</p>
                                 </div>
                                 <div className="grid grid-cols-1 gap-1">
                                     {locations.map((location) => (

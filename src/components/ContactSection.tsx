@@ -8,10 +8,9 @@ export default function ContactSection() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         <div>
                             <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface mb-6">
-                                Ready to <span className="text-gradient-indigo">Flow?</span></h2>
+                                Start a <span className="text-gradient-indigo">Conversation</span></h2>
                             <p className="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">
-                                Initiate a conversation with our strategy team. We take on a limited number of new partners
-                                each quarter to ensure uncompromising focus.
+                                We take on a focused number of new clients each quarter so every engagement gets the attention it deserves. Share a few details and a member of our team will be in touch.
                             </p>
                             <div className="space-y-8">
                                 <div className="flex items-center gap-4 py-2">
@@ -20,7 +19,7 @@ export default function ContactSection() {
                                 </div>
                                 <div className="flex items-center gap-4 py-2">
                                     <span className="material-symbols-outlined text-primary text-2xl">call</span>
-                                    <p className="font-body-md text-on-surface">+44 (0) 20 7946 0958</p>
+                                    <p className="font-body-md text-on-surface">+966 5X XXX XXXX</p>
                                 </div>
                                 <div className="flex items-center gap-4 mt-8 ml-2"><a href="#"
                                     className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 transition-all duration-300">

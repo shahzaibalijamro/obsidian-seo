@@ -9,7 +9,7 @@ export default function TrustBadges() {
     <section className="py-16 bg-transparent overflow-hidden">
       <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop mb-8 text-center">
         <p className="font-label-md text-on-surface-variant uppercase tracking-widest text-sm opacity-60">
-          Trusted by Forward-Thinking Brands
+          Trusted by Growing Businesses Across Saudi Arabia
         </p>
       </div>
       <div className="relative w-full overflow-hidden">

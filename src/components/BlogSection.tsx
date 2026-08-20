@@ -5,7 +5,7 @@ export default function BlogSection() {
             <section className="py-section-padding-mobile sm:py-section-padding-mobile sm:py-section-padding">
                 <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop">
                     <div className="flex justify-between items-end mb-12">
-                        <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface">Latest Blogs
+                        <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface">Insights &amp; Resources
                         </h2>
                         <a className="hidden md:flex font-label-md text-primary items-center gap-2 hover:text-on-surface transition-colors"
                             href="#">Read Journal <span className="material-symbols-outlined text-sm">arrow_forward</span></a>
