@@ -44,7 +44,7 @@ export default function Home() {
           badgeText="OUR MISSION"
           title={<>Built Around <span className="text-gradient-indigo">Your Growth</span></>}
           paragraphs={[
-            "Obsidian Digital is a full-service digital marketing agency in Saudi Arabia working with businesses at every stage, from ambitious startups to established enterprises. We combine strategic thinking with strong technical execution to help our clients grow their digital presence and generate more revenue online.",
+            "Obsidian Digital is a full-service digital marketing agency in KSA working with businesses at every stage, from ambitious startups to established enterprises. We combine strategic thinking with strong technical execution to help our clients grow their digital presence and generate more revenue online.",
             "Our work spans SEO, paid media, social media, content strategy, custom software, and AI-powered solutions. We do not believe in generic strategies. Every client receives a plan built around their specific objectives, their audience, and the realities of operating in the Saudi market."
           ]}
           buttonText="See How We Work"
@@ -67,7 +67,7 @@ export default function Home() {
         />
         <FeaturesSection
           title="Why Businesses in KSA Choose Obsidian Digital"
-          description="We are a digital marketing agency in KSA focused on results, not activity. Every service we deliver is designed to contribute to measurable business growth, not just metrics that look good on a report. Here is what working with us looks like in practice."
+          description="We are a digital marketing agency in Saudi Arabia focused on results, not activity. Every service we deliver is designed to contribute to measurable business growth, not just metrics that look good on a report. Here is what working with us looks like in practice."
           features={[
             { icon: "groups", title: "Senior-Led from Start to Finish", description: "Every engagement is handled by experienced professionals throughout. Your work is not handed to junior staff once the contract is signed." },
             { icon: "settings_suggest", title: "Strategies Built for Your Business", description: "We build around your goals, your customers, and your market position. Not an off-the-shelf package applied to every client we work with." },

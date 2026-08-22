@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="bg-surface border-t border-line-subtle w-full pt-section-padding-mobile pb-[40px] sm:py-section-padding">
+        <footer className="bg-surface border-t border-line-subtle w-full pt-section-padding-mobile pb-10 sm:py-section-padding">
             <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop">
                 <div className="grid text-center md:text-left grid-cols-1 md:grid-cols-4 gap-gutter mb-16">
 

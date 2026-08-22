@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const faqs = [
+const defaultFaqs = [
   {
     question: "How much does it cost to work with Obsidian Digital?",
     answer: "Our pricing depends on the scope, service mix, and level of resource required. Most mid-market engagements start from SAR 185,000. We are happy to review your requirements and provide a clear, itemised proposal. If you are looking for a top digital marketing agency in Saudi Arabia that is transparent about pricing, we will always give you a straight answer."
@@ -36,7 +36,17 @@ const faqs = [
   }
 ];
 
-export default function FAQSection() {
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQSectionProps {
+  faqs?: FAQItem[];
+  description?: string;
+}
+
+export default function FAQSection({ faqs = defaultFaqs, description = "Common questions about working with us, how we structure engagements, and what to expect throughout the process." }: FAQSectionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
@@ -47,7 +57,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="font-body-lg text-on-surface-variant">
-            Common questions about working with us, how we structure engagements, and what to expect throughout the process.
+            {description}
           </p>
         </div>
         <div className="space-y-4">
