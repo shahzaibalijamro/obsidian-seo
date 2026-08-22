@@ -3,8 +3,9 @@ import React from 'react';
 export interface Feature {
     icon: string;
     title: string;
-    description: string;
+    description?: string;
     bullets?: string[];
+    logos?: { src: string; alt: string }[];
 }
 
 export interface FeaturesSectionProps {
@@ -84,7 +85,21 @@ export default function FeaturesSection({
                                 <span className={`material-symbols-outlined ${centerAlign ? 'text-2xl' : ''}`}>{feature.icon}</span>
                             </div>
                             <h3 className="font-headline-md text-xl text-on-surface mb-3">{feature.title}</h3>
-                            <p className={`font-body-md text-on-surface-variant ${centerAlign ? 'text-sm' : ''} ${feature.bullets ? 'mb-6' : ''}`}>{feature.description}</p>
+                            {feature.description && (
+                                <p className={`font-body-md text-on-surface-variant ${centerAlign ? 'text-sm' : ''} ${feature.bullets || feature.logos ? 'mb-6' : ''}`}>{feature.description}</p>
+                            )}
+                            {feature.logos && feature.logos.length > 0 && (
+                                <div className="flex flex-wrap gap-4 mt-4 items-center">
+                                    {feature.logos.map((logo, lIdx) => (
+                                        <div key={lIdx} className="w-12 h-12 bg-surface rounded-lg border border-line-subtle flex items-center justify-center p-2 tooltip-container relative group">
+                                            <img src={`/${logo.src}`} alt={logo.alt} className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" title={logo.alt} />
+                                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-surface-variant text-on-surface-variant text-xs rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-10 border border-line-subtle">
+                                                {logo.alt}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                             {feature.bullets && feature.bullets.length > 0 && (
                                 <ul className="space-y-3 font-body-md text-on-surface-variant text-sm mt-auto">
                                     {feature.bullets.map((bullet, bIdx) => (

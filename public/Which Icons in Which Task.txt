@@ -1,0 +1,11 @@
+Keyword Research: Semrush, Ahrefs, Google Trends, ChatGPT, Perplexity
+
+Technical Audit: Screaming Frog, Google Search Console, Bing Webmaster Tools, PageSpeed Insights, Lighthouse, ChatGPT, Claude
+
+Analytics & Tracking: Google Analytics 4, Google Search Console, Looker Studio, Ahrefs, Semrush, Microsoft Clarity, ChatGPT, Claude
+
+Optimization: PageSpeed Insights, Yoast SEO, Rank Math, Surfer SEO, Semrush, Screaming Frog, ChatGPT, Claude
+
+Link Building: Ahrefs, Semrush, Majestic, ChatGPT, Claude, Perplexity
+
+Content Optimization: Clearscope, Surfer SEO, Frase, Semrush, ChatGPT, Claude, Google Gemini, Perplexity

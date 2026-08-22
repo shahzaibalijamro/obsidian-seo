@@ -143,10 +143,6 @@ export default function SeoServicePage() {
                     ]}
                 />
 
-                <CaseStudiesSection />
-                <IndustriesSection />
-                <TestimonialsSection description="Hear from businesses we have helped grow through SEO." />
-
                 <div className="relative -top-8">
                     <FeaturesSection
                         badgeText="TECH STACK"
@@ -154,15 +150,92 @@ export default function SeoServicePage() {
                         description="We use industry-leading tools across every stage of the SEO process, from research and auditing through to tracking, reporting, and optimisation."
                         columns={3}
                         features={[
-                            { icon: "key", title: "Keyword Research", description: "Semrush, Ahrefs" },
-                            { icon: "troubleshoot", title: "Technical Audit", description: "Screaming Frog, Search Console" },
-                            { icon: "query_stats", title: "Analytics & Tracking", description: "Google Analytics 4, Rank Tracker" },
-                            { icon: "speed", title: "Optimization", description: "PageSpeed Insights, Yoast SEO" },
-                            { icon: "link", title: "Link Building", description: "Ahrefs, Majestic" },
-                            { icon: "description", title: "Content Optimization", description: "Clearscope, Surfer SEO" }
+                            {
+                                icon: "key",
+                                title: "Keyword Research",
+                                logos: [
+                                    { src: "SEMRush Logo.svg", alt: "Semrush" },
+                                    { src: "Ahrefs Logo.svg", alt: "Ahrefs" },
+                                    { src: "Google Trends Logo.svg", alt: "Google Trends" },
+                                    { src: "ChatGPT Logo.svg", alt: "ChatGPT" },
+                                    { src: "Perplexity Logo.svg", alt: "Perplexity" }
+                                ]
+                            },
+                            {
+                                icon: "troubleshoot",
+                                title: "Technical Audit",
+                                logos: [
+                                    { src: "Screaming Frog Logo.svg", alt: "Screaming Frog" },
+                                    { src: "Search Console Logo.svg", alt: "Search Console" },
+                                    { src: "Bing Webmaster Logo.svg", alt: "Bing Webmaster" },
+                                    { src: "Page Speed Insights Logo.svg", alt: "PageSpeed Insights" },
+                                    { src: "Google Lighthouse Logo.svg", alt: "Lighthouse" },
+                                    { src: "ChatGPT Logo.svg", alt: "ChatGPT" },
+                                    { src: "Claude Logo.svg", alt: "Claude" }
+                                ]
+                            },
+                            {
+                                icon: "query_stats",
+                                title: "Analytics & Tracking",
+                                logos: [
+                                    { src: "Google Analytics Logo.svg", alt: "Google Analytics 4" },
+                                    { src: "Search Console Logo.svg", alt: "Search Console" },
+                                    { src: "Google Looker Studio Logo.svg", alt: "Looker Studio" },
+                                    { src: "Ahrefs Logo.svg", alt: "Ahrefs" },
+                                    { src: "SEMRush Logo.svg", alt: "Semrush" },
+                                    { src: "Microsoft Clarity Logo.svg", alt: "Microsoft Clarity" },
+                                    { src: "ChatGPT Logo.svg", alt: "ChatGPT" },
+                                    { src: "Claude Logo.svg", alt: "Claude" }
+                                ]
+                            },
+                            {
+                                icon: "speed",
+                                title: "Optimization",
+                                logos: [
+                                    { src: "Page Speed Insights Logo.svg", alt: "PageSpeed Insights" },
+                                    { src: "Yoast SEO Logo.svg", alt: "Yoast SEO" },
+                                    { src: "Rankmath SEO Logo.svg", alt: "Rank Math" },
+                                    { src: "Surfer SEO Logo.svg", alt: "Surfer SEO" },
+                                    { src: "SEMRush Logo.svg", alt: "Semrush" },
+                                    { src: "Screaming Frog Logo.svg", alt: "Screaming Frog" },
+                                    { src: "ChatGPT Logo.svg", alt: "ChatGPT" },
+                                    { src: "Claude Logo.svg", alt: "Claude" }
+                                ]
+                            },
+                            {
+                                icon: "link",
+                                title: "Link Building",
+                                logos: [
+                                    { src: "Ahrefs Logo.svg", alt: "Ahrefs" },
+                                    { src: "SEMRush Logo.svg", alt: "Semrush" },
+                                    { src: "Majestic Logo.svg", alt: "Majestic" },
+                                    { src: "ChatGPT Logo.svg", alt: "ChatGPT" },
+                                    { src: "Claude Logo.svg", alt: "Claude" },
+                                    { src: "Perplexity Logo.svg", alt: "Perplexity" }
+                                ]
+                            },
+                            {
+                                icon: "description",
+                                title: "Content Optimization",
+                                logos: [
+                                    { src: "Clearscope Logo.svg", alt: "Clearscope" },
+                                    { src: "Surfer SEO Logo.svg", alt: "Surfer SEO" },
+                                    { src: "Frase Logo.svg", alt: "Frase" },
+                                    { src: "SEMRush Logo.svg", alt: "Semrush" },
+                                    { src: "ChatGPT Logo.svg", alt: "ChatGPT" },
+                                    { src: "Claude Logo.svg", alt: "Claude" },
+                                    { src: "Google Gemini Logo.svg", alt: "Google Gemini" },
+                                    { src: "Perplexity Logo.svg", alt: "Perplexity" }
+                                ]
+                            }
                         ]}
                     />
                 </div>
+
+                <CaseStudiesSection />
+                <IndustriesSection />
+                <TestimonialsSection description="Hear from businesses we have helped grow through SEO." />
+
 
                 <FAQSection
                     faqs={seoFaqs}
