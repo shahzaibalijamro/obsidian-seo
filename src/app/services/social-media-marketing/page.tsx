@@ -14,21 +14,56 @@ import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import BackToTop from "@/components/BackToTop";
 
+const smmFaqs = [
+    {
+        question: "How much do social media marketing services cost?",
+        answer: "Our social media marketing packages are based on your specific requirements, including platforms, content volume, community management, and paid advertising. We avoid one-size-fits-all pricing and create a transparent proposal based on your goals, scope, and expected level of support."
+    },
+    {
+        question: "How long does it take to see results from social media?",
+        answer: "Results depend on your objectives, channels, and starting point. Social media marketing in Saudi typically takes three to six months of consistent organic activity to generate meaningful audience growth and engagement. Paid campaigns can begin generating traffic and leads within days, with performance improving through ongoing optimisation."
+    },
+    {
+        question: "Which social media platforms do you work with?",
+        answer: "We work across Instagram, TikTok, LinkedIn, Facebook, X, YouTube, Pinterest, and Snapchat. We recommend platforms based on your target audience, industry, and commercial objectives rather than simply following trends. For Saudi consumer brands, Instagram and TikTok often perform strongly, while LinkedIn is typically more effective for B2B."
+    },
+    {
+        question: "Do you create all the content, or do we need to provide creative assets?",
+        answer: "We handle full content production, including copywriting, graphic design, short-form video editing, and creative direction. You can provide brand guidelines, product information, photography, or existing footage. If you need new photography or video production, we can also incorporate this into the project scope."
+    },
+    {
+        question: "Can you manage both paid and organic social media at the same time?",
+        answer: "Yes. We recommend combining both where the budget allows. Organic content builds your brand, establishes your voice, and develops your community, while paid campaigns accelerate reach and generate targeted leads. Managing both together also keeps your messaging, creative, and audience targeting consistent."
+    },
+    {
+        question: "Who will be managing our social media accounts?",
+        answer: "As a social media marketing company in Saudi with dedicated teams, we assign a focused team to your account rather than relying on a shared pool of freelancers. Depending on your scope, this can include a strategist, content creator, paid media specialist, and community manager, with a dedicated account lead overseeing communication."
+    },
+    {
+        question: "How do you measure the success of social media campaigns?",
+        answer: "As a social media marketing company focused on commercial outcomes, we measure performance against KPIs that directly support your business objectives. These may include engagement, website traffic, lead volume, cost per lead, conversions, and revenue influence. We report consistently and use performance data to optimise campaigns over time."
+    },
+    {
+        question: "Do you work with both B2B and B2C businesses in Saudi Arabia?",
+        answer: "Yes. Our social media marketing Saudi Arabia B2B vs B2C approach is tailored to the differences between each audience and buying journey. For B2C brands, we focus on reach, visual content, engagement, and conversions across platforms like Instagram and TikTok. For B2B, we prioritise thought leadership, credibility, and lead generation, particularly through LinkedIn."
+    }
+];
+
 export default function SocialMediaMarketingPage() {
     return (
         <>
             <main>
                 <HeroSection
-                    badgeText="PREMIUM SOCIAL AGENCY"
+                    badgeText="SOCIAL MEDIA MARKETING AGENCY IN SAUDI ARABIA"
                     title={
                         <>
-                            Dominate Social with <span className="text-gradient-indigo">Strategic Precision</span>
+                            The Full-Service Social Media Marketing Agency <span className="text-gradient-indigo">Saudi Brands Choose</span>
                         </>
                     }
-                    description="We engineer viral growth through data-driven social architectures. Scale your brand presence and capture audience attention with our elite engagement protocols."
+                    description="We build social media strategies that grow real audiences, generate qualified leads, and deliver measurable returns for businesses across the Kingdom. Organic content, paid campaigns, influencer partnerships, planned and executed by one dedicated team."
                     buttons={[
-                        { text: "Launch Social Campaign", href: "#services", variant: "primary", icon: "arrow_forward" },
-                        { text: "Explore Strategies", href: "#contact", variant: "secondary" }
+                        { text: "Launch a Social Campaign", href: "#services", variant: "primary", icon: "arrow_forward" },
+                        { text: "Explore Our Strategy", href: "#contact", variant: "secondary" }
                     ]}
                 />
 
@@ -40,12 +75,12 @@ export default function SocialMediaMarketingPage() {
                     badgeText="SOCIAL MEDIA STRATEGY"
                     title={
                         <>
-                            Cultivating Digital Communities for <span className="text-gradient-indigo">Brand Dominance</span>
+                            Social Media Marketing That <span className="text-gradient-indigo">Builds Real Business Value</span>
                         </>
                     }
                     paragraphs={[
-                        "Our social media marketing strategies are precision-engineered to transform your brand's digital presence into a highly engaged community. We leverage strategic content distribution, audience persona mapping, and high-impact engagement tactics to ensure your brand doesn't just broadcast—it connects.",
-                        "By aligning your social infrastructure with platform-specific intelligence, we drive measurable brand awareness and compounding audience growth."
+                        "The social media marketing Saudi Arabia businesses trust to deliver results is not built on follower counts and vanity metrics, it is built on strategy. We develop campaigns that connect your brand with the right audiences, convert engagement into commercial opportunities, and ensure every piece of content serves a defined purpose aligned with your business goals.",
+                        "As a social media marketing company in Saudi, we work with businesses across a broad range of industries, from e-commerce and hospitality to B2B technology and professional services. Whether you need a complete social media strategy or focused support on specific channels, we structure each engagement around what your business genuinely needs."
                     ]}
                     imageSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuDa503hjmRWeO1RqwggytC2mikW-tM91a9GK1LzJxLNwuiNgV_BX7WR628UV1xYzq4Ib0HLr67DuPrrIR8YLFrCjOuXY8b7u6zgoJZR8kMEvdESm6Cj7r8n8HwiZZcMQecXNsF3AKV-1d86Zdwl5OGyVT69ucuBG2jpmaspOZOzU6ma_44r6i9GMX2gBcugivd5SpyLKbahTKdWy_qkeTxvMxP30GpoqXrkBwrPCIddE4SUt8jbBpjyqCOGEJNxRSL5-ykB1AsELc0"
                 />
@@ -54,90 +89,99 @@ export default function SocialMediaMarketingPage() {
                     page="social-media"
                     badgeText="CAPABILITIES"
                     title="Social Media Services"
-                    description="Precision-engineered social strategies designed to dominate the digital landscape and drive meaningful brand engagement."
+                    description="Our full social media marketing services cover strategy, content creation, community management, paid advertising, influencer partnerships, and analytics, everything your brand needs to grow its presence and generate results across social platforms."
                     services={[
-                        { icon: "hub", title: "Social Media Strategy", description: "Data-driven roadmaps to align social presence with business objectives." },
-                        { icon: "palette", title: "Content Creation", description: "High-impact visual and narrative assets tailored for each platform." },
-                        { icon: "forum", title: "Social Media Management", description: "Full-spectrum community oversight and brand voice consistency." },
-                        { icon: "ads_click", title: "Paid Advertising", description: "Targeted ad campaigns optimized for maximum ROI and audience growth." },
-                        { icon: "groups", title: "Influencer Marketing", description: "Strategic partnerships with key voices to amplify brand reach." },
-                        { icon: "volunteer_activism", title: "Community Management", description: "Fostering active engagement and building loyal brand advocates." },
-                        { icon: "rocket_launch", title: "Campaign Management", description: "End-to-end execution of high-velocity social initiatives." },
-                        { icon: "bar_chart", title: "Analytics Reporting", description: "Comprehensive performance tracking and data-driven insights." }
+                        { icon: "hub", title: "Social Media Strategy", description: "Data-driven strategies aligning platforms, content, audiences, and posting schedules with your commercial objectives." },
+                        { icon: "palette", title: "Content Creation", description: "Platform-native graphics, videos, copy, and creative direction designed to communicate clearly and drive engagement." },
+                        { icon: "forum", title: "Social Media Management", description: "Manage comments, messages, and conversations while maintaining brand voice and building lasting customer relationships." },
+                        { icon: "ads_click", title: "Paid Advertising", description: "Launch and optimise targeted social campaigns that generate qualified leads, sales, and sustainable returns." },
+                        { icon: "groups", title: "Influencer Marketing", description: "Partner with relevant creators to authentically reach audiences and deliver measurable brand outcomes beyond awareness." },
+                        { icon: "volunteer_activism", title: "Community Management", description: "Grow relevant followers through organic engagement and targeted promotion designed to attract ideal customers." },
+                        { icon: "rocket_launch", title: "Campaign Management", description: "Coordinate social campaigns from briefing through reporting, ensuring creative, targeting, scheduling, and performance align." },
+                        { icon: "bar_chart", title: "Analytics Reporting", description: "Track social performance through meaningful metrics connecting reach, engagement, traffic, leads, and revenue contribution." }
                     ]}
                 />
 
                 <FeaturesSection
-                    title="Why Choose Our Social Media Marketing Services"
-                    description="We blend creative storytelling with data-driven strategy to build thriving digital communities. Our campaigns are engineered to maximize engagement, reach, and measurable business growth."
+                    title="Why Businesses Choose Our Social Media Marketing Agency"
+                    description="As a social media marketing agency Saudi Arabia businesses have partnered with across multiple industries, we understand that every brand has a different audience, a different voice, and different commercial goals. A strategy that works for a consumer brand will not work for a B2B software company, and we build accordingly. Here is what makes our approach different."
                     features={[
-                        { icon: "palette", title: "Creative Expertise", description: "High-impact content that resonates with your audience." },
-                        { icon: "query_stats", title: "Data-Driven Strategies", description: "Campaigns backed by platform analytics and trend forecasting." },
-                        { icon: "hub", title: "Platform Knowledge", description: "Deep mastery of Instagram, LinkedIn, X, and emerging channels." },
-                        { icon: "edit_road", title: "Customized Campaigns", description: "Bespoke social roadmaps tailored to your brand's unique goals." },
-                        { icon: "bar_chart", title: "Transparent Reporting", description: "Real-time insights into reach, engagement, and conversion metrics." },
-                        { icon: "ads_click", title: "Measurable Results", description: "A relentless focus on ROI and sustainable community growth." }
+                        { icon: "palette", title: "Purposeful Content", description: "Content designed to build awareness, engagement, traffic, and purchasing intent." },
+                        { icon: "query_stats", title: "Audience First", description: "Campaigns backed by platform analytics and trend forecasting." },
+                        { icon: "hub", title: "Platform Expertise", description: "Expertise across major platforms, formats, algorithms, audiences, and emerging channels." },
+                        { icon: "edit_road", title: "Goal Driven", description: "Campaigns structured around clear objectives, KPIs, and measurable performance outcomes." },
+                        { icon: "bar_chart", title: "Honest Reporting", description: "Clear reporting focused on meaningful metrics, conversions, traffic, and engagement." },
+                        { icon: "ads_click", title: "Commercial Results", description: "We prioritise qualified leads, revenue, retention, credibility, and meaningful business impact." }
                     ]}
                 />
 
                 <ProcessSection
                     badgeText="METHODOLOGY"
                     title="Our Social Media Marketing Process"
-                    description="A precision-engineered 7-step lifecycle designed to architect social dominance and sustainable organic growth."
+                    description="A seven-stage process that takes your brand from research and strategy through to live campaigns, active community management, and continuous performance improvement."
                     layout="flat"
                     steps={[
-                        { number: "01", icon: "search", title: "Research", description: "Deep audience insights and competitor landscape analysis." },
-                        { number: "02", icon: "architecture", title: "Strategy Development", description: "Crafting a comprehensive social roadmap aligned with business goals." },
-                        { number: "03", icon: "edit_calendar", title: "Content Planning", description: "Intentional scheduling and thematic content pillar creation." },
-                        { number: "04", icon: "palette", title: "Creative Production", description: "High-fidelity visual assets and compelling copy tailored for engagement." },
-                        { number: "05", icon: "rocket_launch", title: "Campaign Execution", description: "Strategic deployment and active community management across channels." },
-                        { number: "06", icon: "monitoring", title: "Performance Tracking", description: "Real-time monitoring of engagement metrics and growth velocity." },
-                        { number: "07", icon: "trending_up", title: "Optimization", description: "Iterative refinements based on data to maximize social ROI.", span: true }
+                        { number: "01", icon: "search", title: "Research", description: "Understand your brand, audience, competitors, and market landscape." },
+                        { number: "02", icon: "architecture", title: "Strategy Development", description: "Define platforms, content, cadence, voice, and campaign priorities." },
+                        { number: "03", icon: "edit_calendar", title: "Content Planning", description: "Plan themes, formats, messages, and publishing schedules." },
+                        { number: "04", icon: "palette", title: "Creative Production", description: "Create platform-optimised graphics, videos, copy, and creative assets." },
+                        { number: "05", icon: "rocket_launch", title: "Campaign Execution", description: "Publish, manage, monitor, and coordinate campaigns effectively." },
+                        { number: "06", icon: "monitoring", title: "Performance Tracking", description: "Track reach, engagement, clicks, leads, and conversions." },
+                        { number: "07", icon: "trending_up", title: "Optimization", description: "Refine creative, targeting, budgets, and strategy using data.", span: true }
                     ]}
                 />
 
                 <FeaturesSection
                     badgeText="ECOSYSTEM"
                     title="Social Media Platforms We Manage"
-                    description="We architect high-performance presence across the digital landscape, leveraging platform-specific algorithms to maximize your brand's reach and resonance."
+                    description="We manage brand presence across all major social platforms, with strategies built around how each platform's audience behaves and what actually drives results on each channel."
                     columns={4}
                     centerAlign={true}
                     features={[
-                        { icon: "facebook", title: "Facebook", description: "Community building & targeted reach." },
-                        { icon: "photo_camera", title: "Instagram", description: "Visual storytelling & aesthetic dominance." },
-                        { icon: "work", title: "LinkedIn", description: "B2B authority & professional networking." },
-                        { icon: "music_note", title: "TikTok", description: "Viral short-form & trend-setting content." },
-                        { icon: "close", title: "X / Twitter", description: "Real-time engagement & brand voice." },
-                        { icon: "smart_display", title: "YouTube", description: "Long-form authority & video SEO." },
-                        { icon: "push_pin", title: "Pinterest", description: "Visual discovery & conversion intent." },
-                        { icon: "dynamic_feed", title: "Emerging", description: "Early adoption of new social frontiers." }
+                        { icon: "facebook", title: "Facebook", description: "Community, reach, engagement, and targeted advertising." },
+                        { icon: "photo_camera", title: "Instagram", description: "Visual storytelling, Reels, influencers, and discovery." },
+                        { icon: "work", title: "LinkedIn", description: "B2B thought leadership, content, and networking." },
+                        { icon: "music_note", title: "TikTok", description: "Short-form video, trends, creativity, and reach." },
+                        { icon: "close", title: "X / Twitter", description: "Real-time engagement, commentary, and conversations." },
+                        { icon: "smart_display", title: "YouTube", description: "Long-form video, SEO, authority, and reach." },
+                        { icon: "push_pin", title: "Pinterest", description: "Visual discovery, inspiration, commerce, and intent." },
+                        { icon: "dynamic_feed", title: "Emerging", description: "Early adoption, testing, growth, and positioning." }
                     ]}
                 />
 
                 <FeaturesSection
                     badgeText="BENEFITS"
-                    title="Compounding Social Value"
-                    description="Our strategic approach delivers measurable impact across every stage of the customer journey."
+                    title="What Good Social Media Does for Your Business"
+                    description="Done properly, social media delivers measurable value across the full customer journey, from first impression through to loyalty and repeat purchase."
                     features={[
-                        { icon: "visibility", title: "Increased Brand Awareness", description: "Expand your reach and establish a dominant presence in your industry's digital conversation." },
-                        { icon: "favorite", title: "Audience Engagement", description: "Transform passive followers into active brand advocates through high-impact interaction." },
-                        { icon: "language", title: "Website Traffic", description: "Drive high-intent users from social platforms directly to your conversion-optimized funnels." },
-                        { icon: "person_add", title: "Lead Generation", description: "Capture qualified leads through targeted social campaigns and strategic lead magnets." },
-                        { icon: "loyalty", title: "Customer Loyalty", description: "Build long-term relationships and increase lifetime value through consistent community care." },
-                        { icon: "trending_up", title: "Improved Conversions", description: "Leverage social proof and retargeting to maximize your overall marketing ROI." }
+                        { icon: "visibility", title: "Increased Brand Awareness", description: "Consistent social content builds brand recognition among audiences most likely to become customers." },
+                        { icon: "favorite", title: "Audience Engagement", description: "Social media builds trust, encourages feedback, and keeps your audience actively connected." },
+                        { icon: "language", title: "Website Traffic", description: "Targeted campaigns attract qualified visitors who are more likely to explore and convert." },
+                        { icon: "person_add", title: "Lead Generation", description: "Social campaigns capture relevant prospects and provide sales teams with valuable opportunities." },
+                        { icon: "loyalty", title: "Customer Loyalty", description: "Ongoing engagement strengthens relationships, encourages repeat purchases, and increases customer referrals." },
+                        { icon: "trending_up", title: "Stronger Conversions", description: "Social proof, retargeting, and credibility influence decisions and improve overall marketing performance." }
                     ]}
                 />
 
-                <PerformanceSection />
+                <PerformanceSection 
+                    title="Paid Social Advertising"
+                    description="As a social media marketing company working across both paid and organic channels, we design paid social campaigns that reach the right audiences at the right moment, with targeting, creative, and budget structures built to drive measurable commercial outcomes."
+                    items={[
+                        { step: "01. Setup", title: "Campaign Architecture", description: "Build structured campaigns, tracking, and conversion systems correctly." },
+                        { step: "02. Targeting", title: "Audience Intelligence", description: "Identify high-value audiences using data and customer insights." },
+                        { step: "03. Creative", title: "Ad Optimization", description: "Test creative, messaging, and placements to improve performance." },
+                        { step: "04. Scale", title: "ROI Tracking", description: "Track leads, enquiries, revenue, and overall advertising returns." }
+                    ]}
+                />
 
                 <CaseStudiesSection />
                 <IndustriesSection />
-                <TestimonialsSection />
+                <TestimonialsSection description="Hear from businesses we have helped grow through social media." />
 
                 <FeaturesSection
                     badgeText="TECH STACK"
                     title="Our Social Media Marketing Tech Arsenal"
-                    description="Precision-engineered tools for content creation, scheduling, social analytics, and community engagement."
+                    description="We use industry-leading tools to support our social media marketing services at every stage, from content planning and scheduling through to analytics, listening, paid campaign management, and performance reporting."
                     columns={3}
                     features={[
                         { icon: "edit_calendar", title: "Content Planning & Scheduling", description: "Later, Buffer, Hootsuite" },
@@ -149,7 +193,10 @@ export default function SocialMediaMarketingPage() {
                     ]}
                 />
 
-                <FAQSection />
+                <FAQSection 
+                    faqs={smmFaqs} 
+                    description="Common questions about our social media marketing services, how we structure engagements, and what results you can realistically expect."
+                />
 
                 <div className="">
                     <CTASection />
