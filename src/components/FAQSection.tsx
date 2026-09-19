@@ -43,18 +43,30 @@ export interface FAQItem {
 
 interface FAQSectionProps {
   faqs?: FAQItem[];
+  badge?: string;
+  title?: string;
   description?: string;
 }
 
-export default function FAQSection({ faqs = defaultFaqs, description = "Common questions about working with us, how we structure engagements, and what to expect throughout the process." }: FAQSectionProps) {
+export default function FAQSection({
+  faqs = defaultFaqs,
+  badge,
+  title = "Frequently Asked Questions",
+  description = "Common questions about working with us, how we structure engagements, and what to expect throughout the process."
+}: FAQSectionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
     <section className="py-section-padding-mobile sm:py-section-padding-mobile sm:py-section-padding bg-mesh section-curve-top section-curve-bottom">
       <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop max-w-3xl">
         <div className="text-center mb-12">
+          {badge && (
+            <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/10 text-primary font-label-md border border-primary/20 backdrop-blur-sm">
+              {badge}
+            </span>
+          )}
           <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface mb-6">
-            Frequently Asked Questions
+            {title}
           </h2>
           <p className="font-body-lg text-on-surface-variant">
             {description}

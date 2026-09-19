@@ -19,7 +19,11 @@ export interface ServicesSectionProps {
     description: string;
     services: ServiceItem[];
     theme?: 'light' | 'dark';
-    page: string
+    page: string;
+    footerAction?: {
+        text: string;
+        href?: string;
+    };
 }
 
 export default function ServicesSection({
@@ -57,7 +61,8 @@ export default function ServicesSection({
             linkText: "Learn More",
             linkHref: "#"
         }
-    ]
+    ],
+    footerAction
 }: ServicesSectionProps) {
     const bgClass = theme === 'dark' ? 'bg-mesh' : 'bg-mesh section-curve-top section-curve-bottom';
 
@@ -114,10 +119,15 @@ export default function ServicesSection({
                                         </div>
                                         <h3 className="font-headline-md text-xl text-on-surface mb-4">{service.title}</h3>
                                         <p className="font-body-md text-on-surface-variant flex-grow mb-8">{service.description}</p>
-                                        {service.linkText && (
+                                        {service.linkText && service.linkHref && (
                                             <a className="font-label-md text-primary mt-auto flex items-center gap-2 hover:text-on-surface transition-colors" href={service.linkHref}>
                                                 {service.linkText} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                                             </a>
+                                        )}
+                                        {service.linkText && !service.linkHref && (
+                                            <span className="font-label-md text-on-surface-variant mt-auto flex items-center gap-2 opacity-60 cursor-not-allowed" aria-disabled="true">
+                                                {service.linkText} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                            </span>
                                         )}
                                     </>
                                 )}
@@ -125,6 +135,28 @@ export default function ServicesSection({
                         );
                     })}
                 </div>
+                {footerAction && (
+                    <div className="mt-12 text-center">
+                        {footerAction.href ? (
+                            <a
+                                className="inline-flex px-8 py-4 bg-inverse-primary text-on-accent font-label-md rounded-full items-center justify-center gap-2 hover:bg-primary hover:text-inverse-primary transition-all duration-300 shadow-[var(--glow-primary-md)]"
+                                href={footerAction.href}
+                            >
+                                {footerAction.text}
+                                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        ) : (
+                            <button
+                                type="button"
+                                disabled
+                                className="inline-flex px-8 py-4 bg-inverse-primary text-on-accent font-label-md rounded-full items-center justify-center gap-2 opacity-50 cursor-not-allowed"
+                            >
+                                {footerAction.text}
+                                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        )}
+                    </div>
+                )}
             </div>
         </section>
     );

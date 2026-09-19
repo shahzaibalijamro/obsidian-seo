@@ -2,7 +2,21 @@
 
 import { motion } from 'framer-motion';
 
-export default function CaseStudiesSection() {
+interface CaseStudiesSectionProps {
+    badge?: string;
+    title?: string;
+    description?: string;
+    linkText?: string;
+    limit?: number;
+}
+
+export default function CaseStudiesSection({
+    badge,
+    title = "Featured Case Studies",
+    description = "A snapshot of what we have built and the results it has produced.",
+    linkText = "View All Work",
+    limit
+}: CaseStudiesSectionProps = {}) {
     const caseStudies = [
         {
             category: "SAAS",
@@ -42,6 +56,8 @@ export default function CaseStudiesSection() {
         }
     ];
 
+    const visibleCaseStudies = typeof limit === "number" ? caseStudies.slice(0, limit) : caseStudies;
+
     return (
         <section className="py-section-padding-mobile sm:py-section-padding-mobile sm:py-section-padding" id="case-studies">
             <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop">
@@ -53,17 +69,22 @@ export default function CaseStudiesSection() {
                     className="flex justify-between items-end mb-16"
                 >
                     <div>
+                        {badge && (
+                            <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-surface-variant text-on-surface-variant font-label-md border border-line-subtle">
+                                {badge}
+                            </span>
+                        )}
                         <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface mb-4">
-                            Featured Case Studies
+                            {title}
                         </h2>
-                        <p className="font-body-lg text-on-surface-variant">A snapshot of what we have built and the results it has produced.</p>
+                        <p className="font-body-lg text-on-surface-variant">{description}</p>
                     </div>
                     <a className="hidden md:flex font-label-md text-primary items-center gap-2 hover:text-on-surface transition-colors"
-                        href="/case-studies">View All Work <span className="material-symbols-outlined text-sm">arrow_forward</span></a>
+                        href="/case-studies">{linkText} <span className="material-symbols-outlined text-sm">arrow_forward</span></a>
                 </motion.div>
                 
                 <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-                    {caseStudies.map((study, index) => (
+                    {visibleCaseStudies.map((study, index) => (
                         <motion.div 
                             key={index} 
                             initial={{ opacity: 0, y: 30 }}
@@ -96,7 +117,7 @@ export default function CaseStudiesSection() {
                     className="mt-12 text-center md:hidden"
                 >
                     <a className="inline-flex font-label-md text-primary items-center gap-2 hover:text-on-surface transition-colors"
-                        href="/case-studies">View All Work <span className="material-symbols-outlined text-sm">arrow_forward</span></a>
+                        href="/case-studies">{linkText} <span className="material-symbols-outlined text-sm">arrow_forward</span></a>
                 </motion.div>
             </div>
         </section>

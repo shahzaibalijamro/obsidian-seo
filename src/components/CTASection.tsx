@@ -1,9 +1,18 @@
 interface CTASectionProps {
     buttonText?: string;
     buttonHref?: string;
+    badge?: string;
+    title?: string;
+    description?: string;
 }
 
-export default function CTASection({ buttonText = "Get Started", buttonHref = "#contact" }: CTASectionProps) {
+export default function CTASection({
+    buttonText = "Get Started",
+    buttonHref = "#contact",
+    badge,
+    title = "Ready to grow your Business in Saudi Arabia?",
+    description = "Most new partnerships start with a straightforward conversation. Tell us what you are trying to achieve and we will tell you honestly whether we can help and how."
+}: CTASectionProps) {
     return (
         <>
 
@@ -12,8 +21,13 @@ export default function CTASection({ buttonText = "Get Started", buttonHref = "#
                     className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20">
                 </div>
                 <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop relative z-10 text-center">
-                    <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-accent mb-6">Ready to grow your Business in Saudi Arabia?</h2>
-                    <p className="font-body-lg text-on-accent/80 mb-10 max-w-2xl mx-auto">Most new partnerships start with a straightforward conversation. Tell us what you are trying to achieve and we will tell you honestly whether we can help and how.</p>
+                    {badge && (
+                        <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-on-accent/10 text-on-accent font-label-md border border-on-accent/20">
+                            {badge}
+                        </span>
+                    )}
+                    <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-accent mb-6">{title}</h2>
+                    <p className="font-body-lg text-on-accent/80 mb-10 max-w-2xl mx-auto">{description}</p>
                     <a className="inline-block px-10 py-5 bg-on-accent text-accent font-label-md rounded-full text-center hover:bg-accent hover:text-on-accent transition-all duration-300 shadow-xl"
                         href={buttonHref}>
                         {buttonText}

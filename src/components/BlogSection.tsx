@@ -1,12 +1,31 @@
-export default function BlogSection() {
+interface BlogSectionProps {
+    badge?: string;
+    title?: string;
+    description?: string;
+}
+
+export default function BlogSection({
+    badge,
+    title = "Insights & Resources",
+    description
+}: BlogSectionProps = {}) {
     return (
         <>
 
             <section className="py-section-padding-mobile sm:py-section-padding-mobile sm:py-section-padding">
                 <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop">
                     <div className="flex justify-between items-end mb-12">
-                        <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface">Insights &amp; Resources
-                        </h2>
+                        <div>
+                            {badge && (
+                                <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-surface-variant text-on-surface-variant font-label-md border border-line-subtle">
+                                    {badge}
+                                </span>
+                            )}
+                            <h2 className="font-display-lg text-headline-lg-mobile sm:text-headline-lg text-on-surface">{title}</h2>
+                            {description && (
+                                <p className="font-body-lg text-on-surface-variant max-w-3xl mt-6">{description}</p>
+                            )}
+                        </div>
                         <a className="hidden md:flex font-label-md text-primary items-center gap-2 hover:text-on-surface transition-colors"
                             href="#">Read Journal <span className="material-symbols-outlined text-sm">arrow_forward</span></a>
                     </div>

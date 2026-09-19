@@ -1,4 +1,10 @@
-export default function TrustBadges() {
+interface TrustBadgesProps {
+  heading?: string;
+}
+
+export default function TrustBadges({
+  heading = "Trusted by Growing Businesses Across Saudi Arabia"
+}: TrustBadgesProps = {}) {
   const logos = ["AcmeCorp", "Quantum", "NEXUS", "Vanguard"];
   // Multiply array to ensure there's enough width to fill any screen before the animation resets
   // 4 sets of 4 logos = 16 logos. Each is 250px. 16 * 250 = 4000px.
@@ -9,7 +15,7 @@ export default function TrustBadges() {
     <section className="py-16 bg-transparent overflow-hidden">
       <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop mb-8 text-center">
         <p className="font-label-md text-on-surface-variant uppercase tracking-widest text-sm opacity-60">
-          Trusted by Growing Businesses Across Saudi Arabia
+          {heading}
         </p>
       </div>
       <div className="relative w-full overflow-hidden">
