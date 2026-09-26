@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useId, useState } from "react";
 
 const defaultFaqs = [
   {
@@ -55,6 +55,7 @@ export default function FAQSection({
   description = "Common questions about working with us, how we structure engagements, and what to expect throughout the process."
 }: FAQSectionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const id = useId();
 
   return (
     <section className="py-section-padding-mobile sm:py-section-padding-mobile sm:py-section-padding bg-mesh section-curve-top section-curve-bottom">
@@ -76,20 +77,25 @@ export default function FAQSection({
           {faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="glass-panel p-6 rounded-2xl cursor-pointer group"
-              onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
+              className="glass-panel group rounded-2xl p-6"
             >
-              <div className="flex justify-between items-center">
-                <h4 className="font-headline-md text-lg text-on-surface">{faq.question}</h4>
-                <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">
-                  {activeIndex === idx ? 'remove' : 'add'}
-                </span>
-              </div>
-              {activeIndex === idx && (
-                <p className="font-body-md text-on-surface-variant mt-4">
+              <h3>
+                <button
+                  type="button"
+                  aria-expanded={activeIndex === idx}
+                  aria-controls={`${id}-answer-${idx}`}
+                  onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
+                  className="flex w-full items-center justify-between gap-4 text-left font-headline-md text-lg text-on-surface focus-visible:outline-2 focus-visible:outline-primary"
+                >
+                  {faq.question}
+                  <span aria-hidden="true" className="material-symbols-outlined text-on-surface-variant transition-colors group-hover:text-primary">
+                    {activeIndex === idx ? 'remove' : 'add'}
+                  </span>
+                </button>
+              </h3>
+              <p id={`${id}-answer-${idx}`} hidden={activeIndex !== idx} className="mt-4 font-body-md text-on-surface-variant">
                   {faq.answer}
-                </p>
-              )}
+              </p>
             </div>
           ))}
         </div>
