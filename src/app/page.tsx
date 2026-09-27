@@ -22,7 +22,7 @@ export default function Home() {
           badgeText="AI-POWERED MARKETING • AUTOMATION • DEVELOPMENT"
           title={
             <>
-              The Digital Marketing Agency <span className="text-gradient-indigo">Designed for Growth in Saudi Arabia</span>
+              Digital Marketing Agency <span className="text-gradient-indigo">Designed for Growth in Saudi Arabia</span>
             </>
           }
           description="The Obsidian is a digital marketing agency for Saudi businesses seeking more qualified traffic, better leads, and stronger digital experiences. We bring together search, content, paid media, AI automation, and development to make your strategy work from first click to conversion."
@@ -37,7 +37,7 @@ export default function Home() {
             { value: "35+", label: "Projects Completed" },
             { value: "18+", label: "Clients Served" },
             { value: "89%", label: "Client Retention" },
-            { value: "8+", label: "Industries/Markets Served" }
+            { value: "17+", label: "Industries/Markets Served" }
           ]}
         />
         <AboutSection
@@ -60,8 +60,8 @@ export default function Home() {
           description="Services designed to generate demand and fuel growth."
           theme="light"
           services={[
-            { icon: "search", title: "SEO", description: "Improve organic visibility through technical SEO, keyword strategy, on-page optimisation, local search, and content planning around real-world search demand.", linkText: "Learn More About Service", linkHref: "/services/seo" },
-            { icon: "ads_click", title: "Search Engine Marketing", description: "Reach high-intent customers through paid search campaigns focused on commercial keywords, conversion tracking, landing pages, and efficient budget utilisation.", linkText: "Learn More About Service", linkHref: "/services/sem" },
+            { icon: "search", title: "Search Engine Optimization", description: "Improve organic visibility through technical SEO, keyword strategy, on-page optimisation, local search, and content planning around real-world search demand.", linkText: "Explore Service", linkHref: "/services/seo" },
+            { icon: "ads_click", title: "Search Engine Marketing", description: "Reach high-intent customers through paid search campaigns focused on commercial keywords, conversion tracking, landing pages, and efficient budget utilisation.", linkText: "Explore Service", linkHref: "/services/sem" },
             { icon: "campaign", title: "Social Media Marketing", description: "Raise awareness and generate demand through platform strategy, paid social campaigns, creative direction, and performance-driven execution.", linkText: "Explore Service", linkHref: "/services/social-media-marketing" },
             { icon: "edit_document", title: "Content Writing", description: "Turn customer questions and search demand into website, landing page, and blog content that informs, ranks, and converts.", linkText: "Explore Service", linkHref: "/services/content-writing" },
             { icon: "psychology", title: "AI Integration", description: "Leverage AI that works for your business with assistants, intelligent workflows, knowledge tools, automation, and integrations built for real operational needs.", linkText: "Explore Service", linkHref: "/services/ai-integration" },

@@ -63,7 +63,7 @@ export default function HeroSection({
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
-                        className="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-3xl mx-auto"
+                        className="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-5xl mx-auto"
                     >
                         {description}
                     </motion.p>

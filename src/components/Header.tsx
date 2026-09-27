@@ -59,6 +59,14 @@ const navLinks = [
     { href: "/blogs", label: "Blogs" }, { href: "/contact", label: "Contact" },
 ];
 
+function splitIntoTwoColumns<T>(items: T[]): [T[], T[]] {
+    const midpoint = Math.ceil(items.length / 2);
+    return [items.slice(0, midpoint), items.slice(midpoint)];
+}
+
+const locationColumns = splitIntoTwoColumns(locations);
+const industryColumns = splitIntoTwoColumns(industries);
+
 function MenuItem({ item, onNavigate, mobile = false }: { item: NavItem; onNavigate?: () => void; mobile?: boolean }) {
     const classes = `block rounded-xl px-3 text-sm leading-snug ${mobile ? "py-2.5" : "py-2"}`;
     return item.href
@@ -123,10 +131,9 @@ export default function Header() {
                 else if (event.currentTarget.matches(":focus-visible")) setDesktopOpen(name);
             }}
             onClick={() => setDesktopOpen(desktopOpen === name ? null : name)}
-            className="flex items-center gap-1 py-2 font-body-md text-on-surface-variant transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-primary"
+            className={`border-b-2 py-2 font-body-md transition-colors focus-visible:outline-2 focus-visible:outline-primary ${desktopOpen === name ? "border-primary text-primary" : "border-transparent text-on-surface-variant hover:border-primary hover:text-primary focus-visible:border-primary"}`}
         >
             {label}
-            <span aria-hidden="true" className={`material-symbols-outlined text-base transition-transform ${desktopOpen === name ? "rotate-180" : ""}`}>expand_more</span>
         </button>
     );
 
@@ -170,10 +177,16 @@ export default function Header() {
                     <div className="relative">
                         {desktopTrigger("locations", "Locations")}
                         {desktopOpen === "locations" && (
-                            <div className="absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-5">
+                            <div className="absolute left-1/2 top-full z-50 w-[420px] -translate-x-1/2 pt-5">
                                 <div id="desktop-locations-menu" className="max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-3xl border border-line bg-surface/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-2xl">
-                                    <h2 className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">Locations</h2>
-                                    {locations.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} />)}
+                                    <p className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">Locations</p>
+                                    <div className="grid grid-cols-2 gap-x-4">
+                                        {locationColumns.map((column, index) => (
+                                            <div key={index} className="min-w-0">
+                                                {column.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} />)}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         )}
@@ -181,10 +194,16 @@ export default function Header() {
                     <div className="relative">
                         {desktopTrigger("industries", "Industries")}
                         {desktopOpen === "industries" && (
-                            <div className="absolute left-1/2 top-full z-50 w-[390px] -translate-x-1/2 pt-5">
+                            <div className="absolute left-1/2 top-full z-50 w-[620px] -translate-x-1/2 pt-5">
                                 <div id="desktop-industries-menu" className="max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-3xl border border-line bg-surface/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-2xl">
-                                    <h2 className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">Industries</h2>
-                                    {industries.map((label) => <MenuItem key={label} item={{ label }} />)}
+                                    <p className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">Industries</p>
+                                    <div className="grid grid-cols-2 gap-x-4">
+                                        {industryColumns.map((column, index) => (
+                                            <div key={index} className="min-w-0">
+                                                {column.map((label) => <MenuItem key={label} item={{ label }} />)}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         )}
@@ -203,7 +222,7 @@ export default function Header() {
 
                 {desktopOpen === "services" && (
                     <div id="desktop-services-menu" className="absolute left-1/2 top-full z-50 grid max-h-[calc(100dvh-5rem-1rem)] w-[min(1100px,calc(100vw-48px))] -translate-x-1/2 grid-cols-4 gap-5 overflow-y-auto rounded-3xl border border-line bg-surface/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-2xl">
-                        {serviceGroups.map((group) => <div key={group.title} className="min-w-0"><h2 className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">{group.title}</h2><div>{group.items.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} />)}</div></div>)}
+                        {serviceGroups.map((group) => <div key={group.title} className="min-w-0"><p className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">{group.title}</p><div>{group.items.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} />)}</div></div>)}
                     </div>
                 )}
             </div>

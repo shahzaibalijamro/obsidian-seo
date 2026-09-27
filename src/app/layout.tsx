@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 import BackToTop from "@/components/BackToTop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
 import AmbientBackground from "@/components/AmbientBackground";
 
 export default function RootLayout({
@@ -38,7 +37,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body-md antialiased selection:bg-inverse-primary selection:text-on-primary bg-mesh">
-          <CustomCursor />
           <AmbientBackground />
           <Header />
           {children}
