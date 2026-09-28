@@ -1,7 +1,9 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import StatsSection from "@/components/StatsSection";
 import AboutSection from "@/components/AboutSection";
+import LocationsSection from "@/components/LocationsSection";
 import ServicesSection from "@/components/ServicesSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ProcessSection from "@/components/ProcessSection";
@@ -13,6 +15,11 @@ import BlogSection from "@/components/BlogSection";
 import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import BackToTop from "@/components/BackToTop";
+
+export const metadata: Metadata = {
+  title: "The Obsidian | AI-Powered Digital Marketing Agency in Saudi Arabia",
+  description: "The Obsidian is a digital marketing agency in Saudi Arabia. We connect SEO, paid media, AI automation, and web development to drive real business growth.",
+};
 
 export default function Home() {
   return (
@@ -37,7 +44,7 @@ export default function Home() {
             { value: "35+", label: "Projects Completed" },
             { value: "18+", label: "Clients Served" },
             { value: "89%", label: "Client Retention" },
-            { value: "17+", label: "Industries/Markets Served" }
+            { value: "17", label: "Industries/Markets Served" }
           ]}
         />
         <AboutSection
@@ -53,6 +60,7 @@ export default function Home() {
           imageSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuA_hdaMLw3kvrwxmF_BeFe5ugUObf-zgGDa-sk8FbbECXYELSzNE3TIkZP_6FnzTe6pXTjVz0oNPd7R22A3qo0bTCjUsb4RTSfpM-EihABXmW586KzexAbluXFsJZJ60SHwwnajWG4Tewtf0IJOMUXmYB9cDGMHCxZhnKAOxmTWruqF-NNFmAVnyOn274h9t1A5glVzrvZUVqxa7gREnBiRJdiINtVE8-gFTZHB2nNYCq1fglygfe85rQnb6kYP7uey0QUeLooT9P4"
           imageAlt="Abstract fluid glass"
         />
+        <LocationsSection />
         <ServicesSection
           page="home"
           badgeText="CAPABILITIES"
@@ -77,7 +85,7 @@ export default function Home() {
           description="The best digital marketing agency in Saudi Arabia is defined by its understanding of business, the quality of its execution, and whether the team can connect marketing with the technology that powers it."
           features={[
             { icon: "auto_awesome", title: "AI-Enabled Execution", description: "We use AI for research, analysis, and automation where it speeds things up or makes them more accurate, while keeping important decisions human-led." },
-            { icon: "trending_up", title: "Growth, Not Vanity Metrics", description: "We focus on qualified demand, leads, conversions, and business outcomes—not traffic or impressions reported without context." },
+            { icon: "trending_up", title: "Growth, Not Vanity Metrics", description: "We focus on qualified demand, leads, conversions, and business outcomes, not traffic or impressions reported without context." },
             { icon: "devices", title: "Marketing & Technology", description: "Websites, analytics, CRM workflows, and customer journeys need to work well to drive better campaign performance. We can improve both sides." },
             { icon: "location_on", title: "Built for Saudi Arabia", description: "Our tactics are rooted in local search, city-level visibility, Arabic and English audiences, and how customers find businesses across KSA." },
             { icon: "forum", title: "Clear Communication", description: "Expect crystal-clear priorities, actionable advice, and visibility into what’s happening, why it matters, and what’s next." },

@@ -79,7 +79,7 @@ export default function HeroSection({
                                 href={btn.href}
                                 className={
                                     btn.variant === 'primary'
-                                        ? "px-8 py-4 bg-inverse-primary text-on-accent font-label-md rounded-full text-center hover:bg-primary hover:text-inverse-primary transition-all duration-300 flex items-center justify-center gap-2 shadow-[var(--glow-primary-md)]"
+                                        ? "px-8 py-4 bg-inverse-primary text-on-accent font-label-md rounded-full text-center hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2 shadow-[var(--glow-primary-md)]"
                                         : "px-8 py-4 border border-outline-variant text-on-surface font-label-md rounded-full text-center hover:border-primary hover:text-primary transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2"
                                 }
                             >

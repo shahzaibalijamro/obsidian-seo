@@ -10,6 +10,15 @@ export interface LocationPageContent {
     faqs: { question: string; answer: string }[];
 }
 
+export const upcomingLocations = [
+    "Khobar",
+    "Jubail",
+    "Tabuk",
+    "Taif",
+    "Abha",
+    "Buraydah",
+] as const;
+
 export const locationPages: LocationPageContent[] = [
     {
         slug: "riyadh",
