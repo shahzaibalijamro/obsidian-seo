@@ -12,30 +12,21 @@ const serviceGroups: { title: string; items: NavItem[] }[] = [
         { label: "Search Engine Marketing", href: "/services/sem" },
         { label: "Social Media Marketing", href: "/services/social-media-marketing" },
         { label: "Social Media Management", href: "/services/social-media-management" },
-        { label: "Local SEO" }, { label: "E-commerce SEO" }, { label: "Technical SEO" },
-        { label: "Email Marketing" }, { label: "Influencer Marketing" },
-        { label: "Online Reputation Management" }, { label: "Conversion Rate Optimization (CRO)" },
-        { label: "Lead Generation" },
+        { label: "Email Marketing", href: "/services/email-marketing" }, { label: "Influencer Marketing", href: "/services/influencer-marketing" },
+        { label: "Online Reputation Management", href: "/services/online-reputation-management" }, { label: "Conversion Rate Optimization (CRO)", href: "/services/conversion-rate-optimization" },
     ] },
     { title: "Content", items: [
-        { label: "Content Writing", href: "/services/content-writing" }, { label: "Content Marketing", href: "/services/content-marketing" },
-        { label: "Copywriting" }, { label: "Blog Writing" }, { label: "SEO Content" },
-        { label: "Graphic Design" }, { label: "Video Content" }, { label: "Branding" },
-        { label: "Content Strategy" },
+        { label: "Content Writing", href: "/services/content-writing" }, { label: "Content Marketing", href: "/services/content-marketing" }
     ] },
     { title: "Automation", items: [
-        { label: "AI Integration", href: "/services/ai-integration" }, { label: "AI Agents" },
-        { label: "AI Chatbots" }, { label: "Business Automation" }, { label: "Marketing Automation" },
-        { label: "CRM Automation" }, { label: "AI-Powered Customer Support" },
-        { label: "Workflow Automation" }, { label: "Lead Generation Automation" },
-        { label: "Custom AI Solutions" },
+        { label: "AI Integration", href: "/services/ai-integration" }, { label: "AI Agents", href: "/services/ai-agents" },
+        { label: "AI Chatbots", href: "/services/ai-chatbots" }, { label: "Business Automation", href: "/services/business-automation" },
+        { label: "Custom AI Solutions", href: "/services/custom-ai-solutions" },
     ] },
     { title: "Development", items: [
         { label: "Web Development", href: "/services/web-development" }, { label: "Software Development", href: "/services/software-development" },
         { label: "App Development", href: "/services/app-development" }, { label: "WordPress Development", href: "/services/wordpress-development" },
-        { label: "Shopify / E-commerce Development" }, { label: "Custom Web Applications" },
-        { label: "SaaS Development" }, { label: "API Integration" },
-        { label: "Website Maintenance & Support" },
+        { label: "Shopify / E-commerce Development", href: "/services/shopify-ecommerce-development" }
     ] },
 ];
 
@@ -45,14 +36,27 @@ const locations: NavItem[] = [
     { label: "Dammam", href: "/locations/dammam" },
     { label: "Makkah", href: "/locations/makkah" },
     { label: "Madinah", href: "/locations/madinah" },
-    { label: "Khobar" }, { label: "Jubail" }, { label: "Tabuk" },
-    { label: "Taif" }, { label: "Abha" }, { label: "Buraydah" },
+    { label: "Khobar", href: "/locations/khobar" }, { label: "Jubail", href: "/locations/jubail" }, { label: "Tabuk", href: "/locations/tabuk" },
+    { label: "Taif", href: "/locations/taif" }, { label: "Abha", href: "/locations/abha" }, { label: "Buraydah", href: "/locations/buraydah" },
 ];
-const industries = [
-    "Real Estate", "Healthcare & Clinics", "Restaurants & Food & Beverage", "Retail & E-commerce",
-    "Hospitality & Hotels", "Travel & Tourism", "Automotive", "Education", "Beauty, Salons & Spas",
-    "Legal Services", "Construction & Engineering", "Fitness & Gyms", "Finance & Fintech",
-    "Logistics & Transportation", "Professional Services", "Manufacturing", "Technology & SaaS",
+const industries: NavItem[] = [
+    { label: "Real Estate", href: "/industries/real-estate" },
+    { label: "Healthcare & Clinics", href: "/industries/healthcare-clinics" },
+    { label: "Restaurants & Food & Beverage", href: "/industries/restaurants-food-beverage" },
+    { label: "Retail & E-commerce", href: "/industries/retail-ecommerce" },
+    { label: "Hospitality & Hotels", href: "/industries/hospitality-hotels" },
+    { label: "Travel & Tourism", href: "/industries/travel-tourism" },
+    { label: "Automotive", href: "/industries/automotive" },
+    { label: "Education", href: "/industries/education" },
+    { label: "Beauty, Salons & Spas", href: "/industries/beauty-salons-spas" },
+    { label: "Legal Services", href: "/industries/legal-services" },
+    { label: "Construction & Engineering", href: "/industries/construction-engineering" },
+    { label: "Fitness & Gyms", href: "/industries/fitness-gyms" },
+    { label: "Finance & Fintech", href: "/industries/finance-fintech" },
+    { label: "Logistics & Transportation", href: "/industries/logistics-transportation" },
+    { label: "Professional Services", href: "/industries/professional-services" },
+    { label: "Manufacturing", href: "/industries/manufacturing" },
+    { label: "Technology & SaaS", href: "/industries/technology-saas" },
 ];
 const navLinks = [
     { href: "/about", label: "About" }, { href: "/case-studies", label: "Case Studies" },
@@ -200,7 +204,7 @@ export default function Header() {
                                     <div className="grid grid-cols-2 gap-x-4">
                                         {industryColumns.map((column, index) => (
                                             <div key={index} className="min-w-0">
-                                                {column.map((label) => <MenuItem key={label} item={{ label }} />)}
+                                                {column.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} />)}
                                             </div>
                                         ))}
                                     </div>
@@ -232,9 +236,9 @@ export default function Header() {
                 <div className="menu-orb pointer-events-none absolute bottom-0 right-1/4 z-0 h-[500px] w-[500px] rounded-full bg-inverse-primary/20 blur-[120px]" />
                 <div className="h-20 w-full flex-shrink-0" />
                 <div className="relative z-10 flex flex-1 flex-col overflow-y-auto px-margin-mobile pb-24 pt-4">
-                    {mobileAccordion("services", "Services", "grid_view", <div className="space-y-5">{serviceGroups.map((group) => <div key={group.title}><h2 className="mb-1 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">{group.title}</h2>{group.items.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />)}</div>)}</div>)}
+                    {mobileAccordion("services", "Services", "grid_view", <div className="space-y-5">{serviceGroups.map((group) => <div key={group.title}><p className="mb-1 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">{group.title}</p>{group.items.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />)}</div>)}</div>)}
                     {mobileAccordion("locations", "Locations", "location_on", locations.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />))}
-                    {mobileAccordion("industries", "Industries", "domain", industries.map((label) => <MenuItem key={label} item={{ label }} mobile />))}
+                    {mobileAccordion("industries", "Industries", "domain", industries.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />))}
                     <div className="my-3 h-px bg-line-subtle" />
                     {navLinks.map((link) => <Link key={link.href} href={link.href} onClick={closeMenu} className="py-3 font-display-lg text-2xl text-on-surface transition-colors hover:text-primary">{link.label}</Link>)}
                     <a href="#contact" onClick={closeMenu} className="mt-6 w-full rounded-full bg-inverse-primary px-8 py-4 text-center font-label-md text-on-accent transition-all duration-300 hover:bg-accent-soft hover:text-on-accent-soft md:hidden">Request a Quote</a>

@@ -1,3 +1,5 @@
+import { additionalLocations } from "@/data/additional-locations";
+
 export interface LocationPageContent {
     slug: string;
     name: string;
@@ -9,15 +11,6 @@ export interface LocationPageContent {
     priorities: { title: string; description: string; icon: string }[];
     faqs: { question: string; answer: string }[];
 }
-
-export const upcomingLocations = [
-    "Khobar",
-    "Jubail",
-    "Tabuk",
-    "Taif",
-    "Abha",
-    "Buraydah",
-] as const;
 
 export const locationPages: LocationPageContent[] = [
     {
@@ -130,4 +123,5 @@ export const locationPages: LocationPageContent[] = [
             { question: "Can you support both marketing and website changes?", answer: "Yes. We can scope content, search, social media, and development work together when those efforts need to support the same customer journey." },
         ],
     },
+    ...additionalLocations,
 ];
