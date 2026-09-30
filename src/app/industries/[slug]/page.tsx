@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const industry = industryPages.find((item) => item.slug === slug);
     if (!industry) notFound();
     return {
-        title: `Digital Marketing for ${industry.name} | Obsidian Digital`,
+        title: `Digital Marketing for ${industry.name} | Nawa Digital`,
         description: industry.description,
     };
 }

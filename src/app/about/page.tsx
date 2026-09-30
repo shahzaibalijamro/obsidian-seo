@@ -18,13 +18,13 @@ export default function About() {
     <>
       <main>
         <HeroSection
-          badgeText="THE OBSIDIAN VISION"
+          badgeText="NAWA VISION"
           title={
             <>
               Engineering the Future of <span className="text-gradient-indigo">Digital Authority.</span>
             </>
           }
-          description="Obsidian Digital operates at the crucial intersection of aesthetic brilliance and technical superiority. We build the intelligent infrastructure that empowers market leaders to dominate the digital landscape through data-driven precision."
+          description="Nawa Digital operates at the crucial intersection of aesthetic brilliance and technical superiority. We build the intelligent infrastructure that empowers market leaders to dominate the digital landscape through data-driven precision."
           buttons={[
             { text: "Learn Our Story", href: "#services", variant: "primary", icon: "arrow_forward" },
             { text: "Meet the Architects", href: "#contact", variant: "secondary" }
@@ -40,7 +40,7 @@ export default function About() {
             </>
           }
           paragraphs={[
-            "Obsidian Digital is a premier digital agency born at the intersection of technical precision and creative strategy. We specialize in engineering high-performance digital ecosystems for enterprises that demand absolute market dominance. Our mission is to bridge the gap between complex data intelligence and human-centric design, ensuring your brand leads with irrefutable authority.",
+            "Nawa Digital is a premier digital agency born at the intersection of technical precision and creative strategy. We specialize in engineering high-performance digital ecosystems for enterprises that demand absolute market dominance. Our mission is to bridge the gap between complex data intelligence and human-centric design, ensuring your brand leads with irrefutable authority.",
             "With a foundation built on algorithmic transparency and architectural excellence, we empower global brands to scale fearlessly in an ever-evolving digital landscape."
           ]}
           buttonText=""
@@ -59,7 +59,7 @@ export default function About() {
                 Expertise. Precision. Transparency.
               </span>
               <h2 className="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">
-                Why Choose Obsidian?
+                Why Choose Nawa?
               </h2>
               <p className="font-body-lg text-on-surface-variant max-w-3xl mx-auto">
                 We combine deep technical mastery with a customer-centric approach to deliver irrefutable digital authority for the world's most ambitious brands.

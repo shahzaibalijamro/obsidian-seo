@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 type FooterItem = { label: string; href?: string };
 
@@ -103,13 +104,13 @@ export default function Footer() {
 
                 <div className="grid gap-10 pt-9 sm:pt-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
                     <div className="flex flex-col items-center sm:items-start gap-4">
-                        <Link href="/" className="font-display-lg text-2xl font-bold tracking-tighter text-on-surface transition-colors hover:text-primary focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:text-headline-md">
-                            OBSIDIAN
+                        <Link href="/" className="inline-flex items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+                            <Image src="/nawa_digital_logo_black.svg" alt="Nawa Digital" width={1000} height={299} className="h-11 w-auto sm:h-12" />
                         </Link>
                         <p className="max-w-md text-sm leading-7 text-on-surface-variant">
                             A digital marketing agency in Saudi Arabia helping businesses grow through search, social media, content, and technology built for the local market.
                         </p>
-                        <p className="mt-1 text-sm text-on-surface-variant">© {new Date().getFullYear()} OBSIDIAN. All rights reserved.</p>
+                        <p className="mt-1 text-sm text-on-surface-variant">© {new Date().getFullYear()} Nawa. All rights reserved.</p>
                     </div>
 
                     <div className="flex items-center text-center sm:items-start sm:text-start flex-col gap-6 lg:items-end lg:text-right">

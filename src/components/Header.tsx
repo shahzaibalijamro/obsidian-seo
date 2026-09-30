@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 type NavItem = { label: string; href?: string };
@@ -174,7 +175,7 @@ export default function Header() {
                 }}
                 className="relative z-50 mx-auto flex h-16 max-w-container-max items-center justify-between px-margin-mobile sm:h-20 sm:px-margin-desktop"
             >
-                <Link onClick={closeMenu} href="/" className="font-display-lg text-2xl font-bold tracking-tighter text-on-surface sm:text-headline-md">OBSIDIAN</Link>
+                <Link onClick={closeMenu} href="/" className="inline-flex mb-1 shrink-0 items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"><Image src="/nawa_digital_logo_blue.svg" alt="Nawa Digital" width={1000} height={299} loading="eager" className="h-9 w-auto sm:h-10" /></Link>
 
                 <div className="hidden items-center gap-5 xl:flex 2xl:gap-7">
                     {desktopTrigger("services", "Services")}

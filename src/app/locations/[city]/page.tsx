@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const location = locationPages.find(({ slug }) => slug === city);
     if (!location) notFound();
     return {
-        title: `Digital Marketing & Web Services in ${location.name} | Obsidian Digital`,
+        title: `Digital Marketing & Web Services in ${location.name} | Nawa Digital`,
         description: location.description,
     };
 }

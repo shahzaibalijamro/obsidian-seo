@@ -82,27 +82,27 @@ export default function ContactPage() {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div>
                                                 <label className="block font-label-md text-on-surface-variant mb-2 ml-2" htmlFor="name">Full Name *</label>
-                                                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="form-input-obsidian w-full text-body-md" placeholder="John Doe" required />
+                                                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="form-input-Nawa w-full text-body-md" placeholder="John Doe" required />
                                             </div>
                                             <div>
                                                 <label className="block font-label-md text-on-surface-variant mb-2 ml-2" htmlFor="email">Corporate Email *</label>
-                                                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="form-input-obsidian w-full text-body-md" placeholder="john@company.com" required />
+                                                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="form-input-Nawa w-full text-body-md" placeholder="john@company.com" required />
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div>
                                                 <label className="block font-label-md text-on-surface-variant mb-2 ml-2" htmlFor="phone">Phone Number</label>
-                                                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="form-input-obsidian w-full text-body-md" placeholder="+1 (555) 000-0000" />
+                                                <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="form-input-Nawa w-full text-body-md" placeholder="+1 (555) 000-0000" />
                                             </div>
                                             <div>
                                                 <label className="block font-label-md text-on-surface-variant mb-2 ml-2" htmlFor="company">Company Name</label>
-                                                <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="form-input-obsidian w-full text-body-md" placeholder="Acme Corp" />
+                                                <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="form-input-Nawa w-full text-body-md" placeholder="Acme Corp" />
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div>
                                                 <label className="block font-label-md text-on-surface-variant mb-2 ml-2" htmlFor="service">Primary Interest *</label>
-                                                <select id="service" name="service" value={formData.service} onChange={handleChange} className="form-input-obsidian w-full text-body-md appearance-none bg-surface-variant/20" required>
+                                                <select id="service" name="service" value={formData.service} onChange={handleChange} className="form-input-Nawa w-full text-body-md appearance-none bg-surface-variant/20" required>
                                                     <option value="" disabled>Select Primary Interest...</option>
                                                     <option value="seo">Search Dominance</option>
                                                     <option value="dev">Platform Architecture</option>
@@ -112,7 +112,7 @@ export default function ContactPage() {
                                             </div>
                                             <div>
                                                 <label className="block font-label-md text-on-surface-variant mb-2 ml-2" htmlFor="budget">Project Budget</label>
-                                                <select id="budget" name="budget" value={formData.budget} onChange={handleChange} className="form-input-obsidian w-full text-body-md appearance-none bg-surface-variant/20">
+                                                <select id="budget" name="budget" value={formData.budget} onChange={handleChange} className="form-input-Nawa w-full text-body-md appearance-none bg-surface-variant/20">
                                                     <option value="" disabled>Select Budget Range...</option>
                                                     <option value="50k-100k">$50k - $100k</option>
                                                     <option value="100k-250k">$100k - $250k</option>
@@ -122,7 +122,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <label className="block font-label-md text-on-surface-variant mb-2 ml-2" htmlFor="timeline">Expected Timeline</label>
-                                            <select id="timeline" name="timeline" value={formData.timeline} onChange={handleChange} className="form-input-obsidian w-full text-body-md appearance-none bg-surface-variant/20">
+                                            <select id="timeline" name="timeline" value={formData.timeline} onChange={handleChange} className="form-input-Nawa w-full text-body-md appearance-none bg-surface-variant/20">
                                                 <option value="" disabled>Select Timeline...</option>
                                                 <option value="immediate">Immediate</option>
                                                 <option value="1-3-months">1-3 Months</option>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <label className="block font-label-md text-on-surface-variant mb-2 ml-2" htmlFor="message">Project Details</label>
-                                            <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={5} className="form-input-obsidian w-full text-body-md resize-none" placeholder="Tell us about your objectives..." required></textarea>
+                                            <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={5} className="form-input-Nawa w-full text-body-md resize-none" placeholder="Tell us about your objectives..." required></textarea>
                                         </div>
                                         <button type="submit" disabled={status === "submitting"} className="w-full bg-inverse-primary hover:bg-accent text-on-primary font-label-md text-label-md py-4 rounded-xl uppercase tracking-widest transition-all duration-300 shadow-[var(--glow-primary-md)] hover:shadow-[var(--glow-primary-lg)] border border-accent/30 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2">
                                             {status === "submitting" ? (
@@ -157,13 +157,13 @@ export default function ContactPage() {
                                 <div className="space-y-8">
                                     {/* Direct Channels */}
                                     <div className="border-b border-on-surface/10 pb-6">
-                                        <a href="mailto:strategy@obsidiandigital.com" className="flex items-center gap-4 group mb-4">
+                                        <a href="mailto:strategy@Nawadigital.com" className="flex items-center gap-4 group mb-4">
                                             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                                                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>mail</span>
                                             </div>
                                             <div>
                                                 <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Electronic Comm</p>
-                                                <p className="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors break-all">strategy@obsidian.com</p>
+                                                <p className="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors break-all">strategy@Nawa.com</p>
                                             </div>
                                         </a>
                                         <a href="tel:+12125550198" className="flex items-center gap-4 group mb-4">

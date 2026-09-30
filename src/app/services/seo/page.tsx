@@ -6,6 +6,7 @@ import ServicesSection from "@/components/ServicesSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ProcessSection from "@/components/ProcessSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
+import IndustriesSection from "@/components/IndustriesSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import BackToTop from "@/components/BackToTop";
@@ -84,15 +85,16 @@ export default function SeoServicePage() {
                 ]} />
 
                 <AboutSection
-                    badgeText="SEO SERVICE INTRODUCTION"
+                    badgeText="Be Seen. Be Found."
                     title={
                         <>
-                            SEO Built Around <span className="text-gradient-indigo">Visibility, Demand, and Growth</span>
+                            SEO That  <span className="text-gradient-indigo">Drives Growth</span>
                         </>
                     }
                     paragraphs={[
-                        "Search engine optimization (SEO) should connect your business with individuals who are already looking for what you have to offer. Our SEO services in Saudi Arabia include technical optimizations, search intent, content, local visibility, authority building and AI-assisted analysis to make sure that priority pages are seen more often, attract better traffic and drive inquiries, sales and long-term organic growth consistently.",
-                        "As an SEO company in Saudi Arabia, we plan around your market, competitors, customers, languages and commercial priorities. If you’re a business looking for affordable SEO services in Saudi Arabia, we’ll shape the roadmap to focus on the work that has the clearest potential impact, using data and human judgment to decide what’s worthy of attention, and why."
+                        "SEO puts your business in front of the people who are looking for what you sell. Our affordable SEO services in Saudi Arabia include technical optimization, search intent, content, local visibility, authority building and AI-assisted analysis.",
+                        "We focus on relevant traffic that can lead to inquiries, sales and sustainable organic growth. All strategies are built around your customers, market, competitors and commercial priorities.",
+                        "As an SEO company in Saudi Arabia, we use both data and human judgment to identify the work that will have the biggest impact on your business. This helps improve your visibility and perform better in search engines over time."
                     ]}
                     buttonText="Explore Our Methodology"
                     buttonHref="#process"
@@ -247,7 +249,8 @@ export default function SeoServicePage() {
                     />
                 </div>
 
-                <CaseStudiesSection />
+                <CaseStudiesSection  description="Examples of SEO problems we solve across technical, local, content, and authority work."/>
+                <IndustriesSection />
                 <FAQSection
                     faqs={seoFaqs}
                     description="Straight answers to the most common questions about our SEO strategy, timelines, ownership, reports, costs and working relationship."

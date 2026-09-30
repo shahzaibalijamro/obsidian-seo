@@ -18,12 +18,12 @@ type TestimonialsSectionProps = {
 
 const defaultTestimonials: Testimonial[] = [
     {
-        quote: "Obsidian didn't just build us a platform; they engineered a growth engine. Their fluid approach to design and architecture fundamentally shifted our trajectory.",
+        quote: "Nawa didn't just build us a platform; they engineered a growth engine. Their fluid approach to design and architecture fundamentally shifted our trajectory.",
         name: "Sarah Jenkins",
         title: "CTO, Nexus Financial"
     },
     {
-        quote: "The precision and technical depth Obsidian brings to the table is unmatched. They don't just deliver projects; they deliver results.",
+        quote: "The precision and technical depth Nawa brings to the table is unmatched. They don't just deliver projects; they deliver results.",
         name: "Marcus Thorne",
         title: "CMO, TechNova"
     },

@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Obsidian Digital - Elevating Digital Landscapes",
+  title: "Nawa Digital - Elevating Digital Landscapes",
   description: "Premium Digital Agency",
 };
 

@@ -15,7 +15,7 @@ export default function ContactSection() {
                             <div className="space-y-8">
                                 <div className="flex items-center gap-4 py-2">
                                     <span className="material-symbols-outlined text-primary text-2xl">mail</span>
-                                    <p className="font-body-md text-on-surface">strategy@obsidiandigital.com</p>
+                                    <p className="font-body-md text-on-surface">strategy@Nawadigital.com</p>
                                 </div>
                                 <div className="flex items-center gap-4 py-2">
                                     <span className="material-symbols-outlined text-primary text-2xl">call</span>
@@ -46,13 +46,13 @@ export default function ContactSection() {
                                     <div>
                                         <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
                                             htmlFor="full-name">Full Name *</label>
-                                        <input className="form-input-obsidian w-full text-body-md" id="full-name"
+                                        <input className="form-input-Nawa w-full text-body-md" id="full-name"
                                             placeholder="John Doe" type="text" required />
                                     </div>
                                     <div>
                                         <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
                                             htmlFor="email-address">Email Address *</label>
-                                        <input className="form-input-obsidian w-full text-body-md" id="email-address"
+                                        <input className="form-input-Nawa w-full text-body-md" id="email-address"
                                             placeholder="john@company.com" type="email" required />
                                     </div>
                                 </div>
@@ -60,13 +60,13 @@ export default function ContactSection() {
                                     <div>
                                         <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
                                             htmlFor="phone-number">Phone Number</label>
-                                        <input className="form-input-obsidian w-full text-body-md" id="phone-number"
+                                        <input className="form-input-Nawa w-full text-body-md" id="phone-number"
                                             placeholder="+1 (555) 000-0000" type="tel" />
                                     </div>
                                     <div>
                                         <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
                                             htmlFor="company-name">Company Name</label>
-                                        <input className="form-input-obsidian w-full text-body-md" id="company-name"
+                                        <input className="form-input-Nawa w-full text-body-md" id="company-name"
                                             placeholder="Acme Corp" type="text" />
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@ export default function ContactSection() {
                                     <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
                                         htmlFor="service-interest">Service Interested In</label>
                                     <select
-                                        className="form-input-obsidian w-full text-body-md appearance-none bg-surface-variant/20"
+                                        className="form-input-Nawa w-full text-body-md appearance-none bg-surface-variant/20"
                                         id="service-interest">
                                         <option value="" disabled defaultValue="">Select a service...</option>
                                         <option value="seo">SEO Dominance</option>
@@ -86,7 +86,7 @@ export default function ContactSection() {
                                 <div>
                                     <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
                                         htmlFor="project-details">Project Details / Message</label>
-                                    <textarea className="form-input-obsidian w-full text-body-md resize-none"
+                                    <textarea className="form-input-Nawa w-full text-body-md resize-none"
                                         id="project-details" placeholder="Tell us about your objectives..."
                                         rows={4}></textarea>
                                 </div>

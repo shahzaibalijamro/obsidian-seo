@@ -3,7 +3,7 @@ import { useId, useState } from "react";
 
 const defaultFaqs = [
   {
-    question: "How much does it cost to work with Obsidian Digital?",
+    question: "How much does it cost to work with Nawa Digital?",
     answer: "Our pricing depends on the scope, service mix, and level of resource required. Most mid-market engagements start from SAR 185,000. We are happy to review your requirements and provide a clear, itemised proposal. If you are looking for a top digital marketing agency in Saudi Arabia that is transparent about pricing, we will always give you a straight answer."
   },
   {

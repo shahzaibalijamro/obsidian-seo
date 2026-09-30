@@ -145,7 +145,7 @@ const contentPayFlow = buildRichContent(
   "PayFlow Inc",
   "/images/case-studies/payflow_inner.png",
   "Secure Transaction Ledger UI",
-  "Security and speed rarely go hand-in-hand, but Obsidian managed to deliver both flawlessly. Our TPS capacity exceeded our most aggressive projections.",
+  "Security and speed rarely go hand-in-hand, but Nawa managed to deliver both flawlessly. Our TPS capacity exceeded our most aggressive projections.",
   "Marcus Wright, VP of Engineering",
   [
     { title: "Security Profiling", desc: "Establishing strict PCI-DSS compliance requirements and tokenization strategies." },

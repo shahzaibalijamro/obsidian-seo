@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import { industryPages } from "@/data/industries";
 
 export const metadata: Metadata = {
-    title: "Industries We Serve | Obsidian Digital",
+    title: "Industries We Serve | Nawa Digital",
     description: "Explore digital marketing, content, automation, and development services for seventeen industries in Saudi Arabia.",
 };
 

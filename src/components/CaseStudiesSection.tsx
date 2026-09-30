@@ -35,24 +35,6 @@ export default function CaseStudiesSection({
             title: "VitaScan AI Diagnostics",
             metric: "99.8% Anomaly Detection",
             image: "/images/case-studies/ai_health.png"
-        },
-        {
-            category: "E-COMMERCE",
-            title: "ShopGenius Engine",
-            metric: "+45% Cart Conversion Rate",
-            image: "/images/case-studies/ecommerce_rec.png"
-        },
-        {
-            category: "ENTERPRISE AI",
-            title: "Synthetix NLP Assistant",
-            metric: "-60% Support Ticket Volume",
-            image: "/images/case-studies/nlp_assistant.png"
-        },
-        {
-            category: "DEVOPS",
-            title: "InfraScale Automation",
-            metric: "99.999% Uptime SLA",
-            image: "/images/case-studies/devops_dash.png"
         }
     ];
 

@@ -9,7 +9,7 @@ export default function TimelineSection() {
                         OUR JOURNEY
                     </span>
                     <h2 className="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">
-                        From Code to Command: The Evolution of Obsidian.
+                        From Code to Command: The Evolution of Nawa.
                     </h2>
                     <p className="font-body-lg text-on-surface-variant max-w-3xl mx-auto">
                         What began as a boutique technical SEO firm has evolved into a full-spectrum digital authority agency. We have consistently pushed the boundaries of what's possible at the intersection of infrastructure and intelligence.
@@ -34,7 +34,7 @@ export default function TimelineSection() {
                     <div className="glass-panel glass-panel-hover p-8 flex flex-col h-full rounded-3xl border border-primary/20 bg-primary/5">
                         <div className="text-gradient-indigo font-display-lg text-2xl mb-4">2024</div>
                         <h3 className="font-headline-md text-xl text-on-surface mb-4">The Nexus</h3>
-                        <p className="font-body-md text-on-surface-variant">Launching the unified Obsidian Digital ecosystem, merging design brilliance with technical precision.</p>
+                        <p className="font-body-md text-on-surface-variant">Launching the unified Nawa Digital ecosystem, merging design brilliance with technical precision.</p>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import LocationCard from "@/components/LocationCard";
+import LocationCarousel from "@/components/LocationCarousel";
 import { locationPages } from "@/data/locations";
 
 export const metadata: Metadata = {
-    title: "Locations We Serve in Saudi Arabia | Obsidian Digital",
-    description: "Explore Obsidian Digital's Saudi service areas, including Riyadh, Jeddah, Dammam, Makkah, Madinah, and more.",
+    title: "Locations We Serve in Saudi Arabia | Nawa Digital",
+    description: "Explore Nawa Digital's Saudi service areas, including Riyadh, Jeddah, Dammam, Makkah, Madinah, and more.",
 };
 
 export default function LocationsPage() {
@@ -29,16 +30,16 @@ export default function LocationsPage() {
                         <h2 id="city-pages-heading" className="mb-4 font-display-lg text-headline-lg-mobile text-on-surface sm:text-headline-lg">City pages</h2>
                         <p className="text-base leading-7 text-on-surface-variant sm:text-body-lg">Each guide introduces our approach to serving businesses in that city.</p>
                     </div>
-                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 lg:gap-6">
+                    <LocationCarousel label="Saudi city pages">
                         {locationPages.map((location, index) => (
                             <LocationCard
                                 key={location.slug}
                                 location={location}
                                 number={index + 1}
-
+                                className="w-full"
                             />
                         ))}
-                    </div>
+                    </LocationCarousel>
                 </div>
             </section>
         </main>

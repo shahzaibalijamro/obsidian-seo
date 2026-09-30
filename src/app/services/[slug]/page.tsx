@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const content = remainingServices.find((service) => service.slug === slug);
     if (!content) notFound();
     return {
-        title: `${content.name} Services in Saudi Arabia | Obsidian Digital`,
+        title: `${content.name} Services in Saudi Arabia | Nawa Digital`,
         description: content.description,
     };
 }

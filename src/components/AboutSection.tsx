@@ -18,7 +18,7 @@ export default function AboutSection({
         </>
     ),
     paragraphs = [
-        "At Obsidian Digital, we don't just build websites; we engineer fluid digital ecosystems designed for dominance. Our approach is rooted in a meticulous understanding of market dynamics, user psychology, and cutting-edge technology.",
+        "At Nawa Digital, we don't just build websites; we engineer fluid digital ecosystems designed for dominance. Our approach is rooted in a meticulous understanding of market dynamics, user psychology, and cutting-edge technology.",
         "We partner exclusively with ambitious brands, providing bespoke solutions that flow seamlessly across platforms. From enterprise-grade software architecture to high-converting SEO strategies, our elite team ensures every touchpoint reflects uncompromising quality."
     ],
     buttonText = "Explore Our Methodology",

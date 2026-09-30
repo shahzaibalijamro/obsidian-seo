@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LocationCard from "@/components/LocationCard";
+import LocationCarousel from "@/components/LocationCarousel";
 import { locationPages } from "@/data/locations";
 
 export default function LocationsSection() {
@@ -17,16 +18,16 @@ export default function LocationsSection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-6 lg:gap-6">
+                <LocationCarousel label="Saudi service areas">
                     {locationPages.map((location, index) => (
                         <LocationCard
                             key={location.slug}
                             location={location}
                             number={index + 1}
-                            className={index < 3 ? "lg:col-span-2" : "lg:col-span-3"}
+                            className="w-full"
                         />
                     ))}
-                </div>
+                </LocationCarousel>
 
                 <div className="mt-12 text-center">
                     <Link href="/locations" className="inline-flex items-center gap-2 rounded-full bg-inverse-primary px-7 py-4 font-label-md text-sm font-semibold text-on-primary shadow-[var(--glow-primary-sm)] transition-all duration-300 hover:bg-primary hover:shadow-[var(--glow-primary-md)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">

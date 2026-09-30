@@ -30,7 +30,7 @@ export const locationPages: LocationPageContent[] = [
             { title: "Support Enquiries", description: "Make the next step easy to find on the pages that matter most.", icon: "forum" },
         ],
         faqs: [
-            { question: "Can you work with a business based in Riyadh?", answer: "Yes. Riyadh is one of the Saudi service areas covered by Obsidian Digital. We agree on the project scope, communication, and delivery arrangements with each client." },
+            { question: "Can you work with a business based in Riyadh?", answer: "Yes. Riyadh is one of the Saudi service areas covered by Nawa Digital. We agree on the project scope, communication, and delivery arrangements with each client." },
             { question: "Which services are most relevant to a Riyadh launch?", answer: "That depends on your audience and starting point. Search visibility, clear service pages, social media, and a usable website are common areas to review together." },
             { question: "Can you improve an existing site rather than rebuild it?", answer: "Yes. We can review the current site and recommend focused content, design, or technical changes before proposing a larger build." },
         ],
@@ -74,7 +74,7 @@ export const locationPages: LocationPageContent[] = [
             { title: "Make Contact Simple", description: "Create straightforward routes from service information to an enquiry.", icon: "contact_mail" },
         ],
         faqs: [
-            { question: "Can we work together if our business is in Dammam?", answer: "Yes. Dammam is within the service areas covered by Obsidian Digital. We discuss project needs and working arrangements before beginning." },
+            { question: "Can we work together if our business is in Dammam?", answer: "Yes. Dammam is within the service areas covered by Nawa Digital. We discuss project needs and working arrangements before beginning." },
             { question: "What if our services are difficult to explain online?", answer: "We can work with your team to identify the main buyer questions and turn specialist knowledge into clearer pages, examples, and calls to action." },
             { question: "Do we need a new website to improve visibility?", answer: "Not always. We review the existing site first and separate content, technical, and design priorities so you can decide what level of change is useful." },
         ],
@@ -118,7 +118,7 @@ export const locationPages: LocationPageContent[] = [
             { title: "Provide a Next Step", description: "Help interested visitors reach the right contact route without confusion.", icon: "arrow_forward" },
         ],
         faqs: [
-            { question: "Do you serve businesses in Madinah?", answer: "Yes. Madinah is one of the Saudi service areas covered by Obsidian Digital. Project communication and delivery are agreed with each client." },
+            { question: "Do you serve businesses in Madinah?", answer: "Yes. Madinah is one of the Saudi service areas covered by Nawa Digital. Project communication and delivery are agreed with each client." },
             { question: "Can you help us write clearer service pages?", answer: "Yes. We can review existing copy, identify missing answers, and write pages structured around your audience and offer." },
             { question: "Can you support both marketing and website changes?", answer: "Yes. We can scope content, search, social media, and development work together when those efforts need to support the same customer journey." },
         ],

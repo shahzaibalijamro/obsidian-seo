@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
                 </h2>
                 <div className="prose-custom max-w-none font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                     <p>
-                        Obsidian Digital operates on a foundational principle of data sovereignty and zero-trust architecture. We view privacy not as a regulatory compliance checklist, but as a fundamental human right engineered into the core of our digital ecosystems. This protocol outlines our unyielding commitment to securing your digital footprint while maintaining the operational excellence required of a premium agency partner.
+                        Nawa Digital operates on a foundational principle of data sovereignty and zero-trust architecture. We view privacy not as a regulatory compliance checklist, but as a fundamental human right engineered into the core of our digital ecosystems. This protocol outlines our unyielding commitment to securing your digital footprint while maintaining the operational excellence required of a premium agency partner.
                     </p>
                 </div>
             </article>

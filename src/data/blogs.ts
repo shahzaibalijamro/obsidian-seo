@@ -81,7 +81,7 @@ const seoAuthor = {
   authorName: "Marcus Thorne",
   authorRole: "Senior SEO Strategist & Intelligence Lead",
   authorImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAm6vcCL-wv2_cf4o_9sU8VzIrq5eBIY06tWH08KaO7xJuFzIiotczX7oTsspzCzA6OhyYCfjMQ_dawWPKv77FkUrKyr01BmudYv9BwflgalK_o3dNpo370Myt-pxr12-_2whnskAzkPAxoFy3cgp9TeBEan-00vcTkHffesC05WqKgL00g502YMglK1BQ-NmYy-zylri_ExuLRcA4yqW1qSCerl6wl3yzkEQZhlWkY3JKo_mKK1kIpEL0ShlgInts0EhH--eJYha0",
-  authorBio: "Marcus Thorne specializes in technical SEO and semantic data modeling. With over a decade of experience in digital architecture, he leads the Intelligence division at Obsidian Digital, focusing on the intersection of AI and organic search."
+  authorBio: "Marcus Thorne specializes in technical SEO and semantic data modeling. With over a decade of experience in digital architecture, he leads the Intelligence division at Nawa Digital, focusing on the intersection of AI and organic search."
 };
 
 
@@ -99,7 +99,7 @@ export const blogsData: BlogPost[] = [
   },
   {
     id: "2",
-    title: "The Obsidian Protocol",
+    title: "NAWA Protocol",
     category: "Security",
     date: "Oct 08, 2024",
     readTime: "12 min read",
