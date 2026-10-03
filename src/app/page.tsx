@@ -57,8 +57,8 @@ export default function Home() {
           ]}
           buttonText="About NAWA"
           buttonHref="/about"
-          imageSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuA_hdaMLw3kvrwxmF_BeFe5ugUObf-zgGDa-sk8FbbECXYELSzNE3TIkZP_6FnzTe6pXTjVz0oNPd7R22A3qo0bTCjUsb4RTSfpM-EihABXmW586KzexAbluXFsJZJ60SHwwnajWG4Tewtf0IJOMUXmYB9cDGMHCxZhnKAOxmTWruqF-NNFmAVnyOn274h9t1A5glVzrvZUVqxa7gREnBiRJdiINtVE8-gFTZHB2nNYCq1fglygfe85rQnb6kYP7uey0QUeLooT9P4"
-          imageAlt="Abstract fluid glass"
+          imageSrc="https://res.cloudinary.com/dacvedc6z/image/upload/v1791054348/digital_marketing_agency_in_saudi_arabia_absg1s.webp"
+          imageAlt="digital marketing agency in saudi arabia - Nawa Digital"
         />
         <LocationsSection />
         <ServicesSection

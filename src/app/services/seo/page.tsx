@@ -98,7 +98,8 @@ export default function SeoServicePage() {
                     ]}
                     buttonText="Explore Our Methodology"
                     buttonHref="#process"
-                    imageSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuAjlQz9J6Vuwgss2y0berHetrsThuw09o2-dNq-ilbtuzjvvpuKlL_D_c3JHAzgiTmX9H6j6d-7j5CtB4KP2SrO3qSK1QPOwmiodyCTqQ7j-2PF0p1AqNnHuyz1AByfYJSjjGtcL4KruF_3eL-9sZsYLAzYqymJn-mYDfnFpgI-n7pDqjtWYzjF6zte2jbhoucs4CFHd4qMNt2FW795HK55XEqIYUXcjXrcPAKVdtjlzB5Xq1Yplio8aTMS1qnAgc3PSu-6JnHgvoo"
+                    imageSrc="https://res.cloudinary.com/dacvedc6z/image/upload/v1791054348/seo_services_in_saudi_arabia_kahtli.webp"
+                    imageAlt="seo company in saudi arabia - Nawa Digital"
                 />
 
                 <ServicesSection

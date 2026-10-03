@@ -21,6 +21,7 @@ import BackToTop from "@/components/BackToTop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AmbientBackground from "@/components/AmbientBackground";
+import SiteCTA from "@/components/SiteCTA";
 
 export default function RootLayout({
   children,
@@ -40,6 +41,7 @@ export default function RootLayout({
           <AmbientBackground />
           <Header />
           {children}
+          <SiteCTA />
           <Footer />
           <BackToTop />
       </body>

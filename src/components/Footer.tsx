@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 
 type FooterItem = { label: string; href?: string };
@@ -81,42 +81,68 @@ export default function Footer() {
     return (
         <footer className="w-full border-t border-line bg-surface-container-low py-12 sm:py-16 lg:pt-20 lg:pb-12">
             <div className="mx-auto max-w-container-max px-margin-mobile sm:px-margin-desktop">
-                <nav aria-label="Footer navigation" className="grid grid-cols-1 text-center gap-x-10 gap-y-10 border-b border-line pb-12 sm:grid-cols-2 sm:text-start sm:gap-y-12 lg:grid-cols-[1.4fr_0.7fr_1.5fr_1.4fr] lg:gap-x-12 lg:pb-16">
-                    {footerGroups.map((group) => (
-                        <div key={group.title}>
-                            <h2 className="mb-5 font-label-md text-sm font-bold uppercase tracking-[0.14em] text-on-surface sm:mb-6">
-                                {group.title}
-                            </h2>
-                            <ul className="space-y-2.5">
-                                {group.items.map((item) => (
-                                    <li key={item.label}>
-                                        {item.href ? (
-                                            <Link href={item.href} className={footerLinkClass}>{item.label}</Link>
-                                        ) : (
-                                            <span className="text-sm leading-6 text-on-surface-variant">{item.label}</span>
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                <nav aria-label="Footer navigation" className="border-b border-line pb-12 lg:pb-16">
+                    {/* Mobile Accordion View */}
+                    <div className="grid grid-cols-1 sm:hidden border-t border-line">
+                        {footerGroups.map((group) => (
+                            <details key={group.title} className="group border-b border-line last:border-none">
+                                <summary className="flex cursor-pointer items-center justify-between py-4 font-label-md text-sm font-bold uppercase tracking-[0.14em] text-on-surface list-none [&::-webkit-details-marker]:hidden">
+                                    {group.title}
+                                    <span className="text-2xl leading-none font-light transition-transform duration-300 group-open:rotate-45">+</span>
+                                </summary>
+                                <ul className="mb-6 space-y-3 text-left">
+                                    {group.items.map((item) => (
+                                        <li key={item.label}>
+                                            {item.href ? (
+                                                <Link href={item.href} className={footerLinkClass}>{item.label}</Link>
+                                            ) : (
+                                                <span className="text-sm leading-6 text-on-surface-variant">{item.label}</span>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </details>
+                        ))}
+                    </div>
+
+                    {/* Desktop Grid View */}
+                    <div className="hidden sm:grid sm:grid-cols-2 sm:text-start gap-y-12 lg:grid-cols-[1.4fr_0.7fr_1.5fr_1.4fr] lg:gap-x-12">
+                        {footerGroups.map((group) => (
+                            <div key={group.title}>
+                                <h2 className="mb-5 font-label-md text-sm font-bold uppercase tracking-[0.14em] text-on-surface sm:mb-6">
+                                    {group.title}
+                                </h2>
+                                <ul className="space-y-2.5">
+                                    {group.items.map((item) => (
+                                        <li key={item.label}>
+                                            {item.href ? (
+                                                <Link href={item.href} className={footerLinkClass}>{item.label}</Link>
+                                            ) : (
+                                                <span className="text-sm leading-6 text-on-surface-variant">{item.label}</span>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
                 </nav>
 
                 <div className="grid gap-10 pt-9 sm:pt-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
                     <div className="flex flex-col items-center sm:items-start gap-4">
                         <Link href="/" className="inline-flex items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
-                            <Image src="/nawa_digital_logo_black.svg" alt="Nawa Digital" width={1000} height={299} className="h-11 w-auto sm:h-12" />
+                            <Image src="/nawa_digital_logo_black.svg" alt="Nawa Digital Logo" width={1000} height={299} className="h-11 w-auto sm:h-12" />
                         </Link>
-                        <p className="max-w-md text-sm leading-7 text-on-surface-variant">
+                        <p className="max-w-md text-center sm:text-start text-sm leading-7 text-on-surface-variant">
                             A digital marketing agency in Saudi Arabia helping businesses grow through search, social media, content, and technology built for the local market.
                         </p>
-                        <p className="mt-1 text-sm text-on-surface-variant">© {new Date().getFullYear()} Nawa. All rights reserved.</p>
+                        <p className="mt-1 text-sm text-on-surface-variant">Ac {new Date().getFullYear()} Nawa. All rights reserved.</p>
                     </div>
 
                     <div className="flex items-center text-center sm:items-start sm:text-start flex-col gap-6 lg:items-end lg:text-right">
                         <div>
                             <h2 className="mb-3 font-label-md text-xs font-bold uppercase tracking-[0.12em] text-on-surface">Social Media Handles</h2>
-                            <ul className="flex flex-wrap gap-x-5 gap-y-2 lg:justify-end">
+                            <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 lg:justify-end">
                                 {socialPlatforms.map((platform) => (
                                     <li key={platform} className="text-sm text-on-surface-variant">{platform}</li>
                                 ))}
@@ -124,13 +150,13 @@ export default function Footer() {
                         </div>
                         <div>
                             <h2 className="mb-3 font-label-md text-xs font-bold uppercase tracking-[0.12em] text-on-surface">Trusted By / Featured On</h2>
-                            <ul className="flex flex-wrap gap-2 lg:justify-end">
+                            <ul className="flex flex-wrap justify-center gap-2 lg:justify-end">
                                 {trustPlatforms.map((platform) => (
                                     <li key={platform} className="rounded-lg border border-line bg-surface px-3 py-2 text-xs text-on-surface-variant">{platform}</li>
                                 ))}
                             </ul>
                         </div>
-                        <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+                        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
                             <Link href="/privacy" className={footerLinkClass}>Privacy Policy</Link>
                             <Link href="/terms" className={footerLinkClass}>Terms of Service</Link>
                         </div>
