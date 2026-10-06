@@ -1,7 +1,48 @@
+"use client";
+
+import { useState } from "react";
+
 export default function ContactSection() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus("idle");
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            company: formData.get("company"),
+            service: formData.get("service"),
+            message: formData.get("message"),
+        };
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setSubmitStatus("success");
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setSubmitStatus("error");
+            }
+        } catch (error) {
+            setSubmitStatus("error");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <>
-
             <section className="py-section-padding-mobile sm:py-section-padding-mobile sm:py-section-padding relative overflow-hidden" id="contact">
                 <div className="absolute inset-0 bg-mesh z-0"></div>
                 <div className="max-w-container-max mx-auto px-margin-mobile sm:px-margin-desktop relative z-10">
@@ -41,69 +82,84 @@ export default function ContactSection() {
                             </div>
                         </div>
                         <div className="glass-panel px-6 py-10 sm:p-10 rounded-3xl">
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
-                                            htmlFor="full-name">Full Name *</label>
-                                        <input className="form-input-Nawa w-full text-body-md" id="full-name"
-                                            placeholder="John Doe" type="text" required />
-                                    </div>
-                                    <div>
-                                        <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
-                                            htmlFor="email-address">Email Address *</label>
-                                        <input className="form-input-Nawa w-full text-body-md" id="email-address"
-                                            placeholder="john@company.com" type="email" required />
-                                    </div>
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
-                                            htmlFor="phone-number">Phone Number</label>
-                                        <input className="form-input-Nawa w-full text-body-md" id="phone-number"
-                                            placeholder="+1 (555) 000-0000" type="tel" />
-                                    </div>
-                                    <div>
-                                        <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
-                                            htmlFor="company-name">Company Name</label>
-                                        <input className="form-input-Nawa w-full text-body-md" id="company-name"
-                                            placeholder="Acme Corp" type="text" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
-                                        htmlFor="service-interest">Service Interested In</label>
-                                    <select
-                                        className="form-input-Nawa w-full text-body-md appearance-none bg-surface-variant/20"
-                                        id="service-interest">
-                                        <option value="" disabled defaultValue="">Select a service...</option>
-                                        <option value="seo">SEO Dominance</option>
-                                        <option value="web-dev">Web Development</option>
-                                        <option value="sem">Growth Marketing (SEM)</option>
-                                        <option value="content">Content Strategy</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
-                                        htmlFor="project-details">Project Details / Message</label>
-                                    <textarea className="form-input-Nawa w-full text-body-md resize-none"
-                                        id="project-details" placeholder="Tell us about your objectives..."
-                                        rows={4}></textarea>
-                                </div>
-                                <div className="flex flex-col gap-4 pt-4">
-                                    <button
-                                        className="w-full py-4 bg-inverse-primary text-on-primary font-label-md rounded-xl hover:bg-primary hover:text-inverse-primary transition-all duration-300 shadow-lg"
-                                        type="submit">
-                                        Send Message
+                            {submitStatus === "success" ? (
+                                <div className="text-center py-12">
+                                    <span className="material-symbols-outlined text-5xl text-primary mb-4">check_circle</span>
+                                    <h3 className="font-headline-md text-on-surface mb-2">Message Sent</h3>
+                                    <p className="text-on-surface-variant">We'll be in touch with you shortly.</p>
+                                    <button onClick={() => setSubmitStatus("idle")} className="mt-8 text-primary font-label-md hover:underline">
+                                        Send another message
                                     </button>
-
                                 </div>
-                            </form>
+                            ) : (
+                                <form className="space-y-6" onSubmit={handleSubmit}>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
+                                                htmlFor="full-name">Full Name *</label>
+                                            <input name="name" className="form-input-Nawa w-full text-body-md" id="full-name"
+                                                placeholder="John Doe" type="text" required />
+                                        </div>
+                                        <div>
+                                            <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
+                                                htmlFor="email-address">Email Address *</label>
+                                            <input name="email" className="form-input-Nawa w-full text-body-md" id="email-address"
+                                                placeholder="john@company.com" type="email" required />
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
+                                                htmlFor="phone-number">Phone Number</label>
+                                            <input name="phone" className="form-input-Nawa w-full text-body-md" id="phone-number"
+                                                placeholder="+1 (555) 000-0000" type="tel" />
+                                        </div>
+                                        <div>
+                                            <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
+                                                htmlFor="company-name">Company Name</label>
+                                            <input name="company" className="form-input-Nawa w-full text-body-md" id="company-name"
+                                                placeholder="Acme Corp" type="text" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
+                                            htmlFor="service-interest">Service Interested In</label>
+                                        <select
+                                            name="service"
+                                            className="form-input-Nawa w-full text-body-md appearance-none bg-surface-variant/20"
+                                            id="service-interest"
+                                            defaultValue="">
+                                            <option value="" disabled>Select a service...</option>
+                                            <option value="seo">SEO Dominance</option>
+                                            <option value="web-dev">Web Development</option>
+                                            <option value="sem">Growth Marketing (SEM)</option>
+                                            <option value="content">Content Strategy</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="block font-label-md text-on-surface-variant mb-2 ml-2"
+                                            htmlFor="project-details">Project Details / Message</label>
+                                        <textarea name="message" className="form-input-Nawa w-full text-body-md resize-none"
+                                            id="project-details" placeholder="Tell us about your objectives..."
+                                            rows={4}></textarea>
+                                    </div>
+                                    {submitStatus === "error" && (
+                                        <p className="text-red-500 text-sm ml-2">Failed to send message. Please try again later.</p>
+                                    )}
+                                    <div className="flex flex-col gap-4 pt-4">
+                                        <button
+                                            disabled={isSubmitting}
+                                            className="w-full py-4 bg-inverse-primary text-on-primary font-label-md rounded-xl hover:bg-primary hover:text-inverse-primary transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                                            type="submit">
+                                            {isSubmitting ? "Sending..." : "Send Message"}
+                                        </button>
+                                    </div>
+                                </form>
+                            )}
                         </div>
                     </div>
                 </div>
             </section>
-
         </>
     );
 }
