@@ -9,8 +9,8 @@ type MenuName = "services" | "locations" | "industries";
 
 const serviceGroups: { title: string; items: NavItem[] }[] = [
     { title: "Marketing", items: [
-        { label: "SEO", href: "/services/seo" },
-        { label: "Search Engine Marketing", href: "/services/sem" },
+        { label: "SEO", href: "/services/search-engine-optimization" },
+        { label: "Search Engine Marketing", href: "/services/search-engine-marketing" },
         { label: "Social Media Marketing", href: "/services/social-media-marketing" },
         { label: "Social Media Management", href: "/services/social-media-management" },
         { label: "Email Marketing", href: "/services/email-marketing" }, { label: "Influencer Marketing", href: "/services/influencer-marketing" },

@@ -7,8 +7,8 @@ const footerGroups: { title: string; items: FooterItem[] }[] = [
     {
         title: "Services",
         items: [
-            { label: "Search Engine Optimization", href: "/services/seo" },
-            { label: "Search Engine Marketing", href: "/services/sem" },
+            { label: "Search Engine Optimization", href: "/services/search-engine-optimization" },
+            { label: "Search Engine Marketing", href: "/services/search-engine-marketing" },
             { label: "Social Media Marketing", href: "/services/social-media-marketing" },
             { label: "Social Media Management", href: "/services/social-media-management" },
             { label: "Email Marketing" },
@@ -136,7 +136,7 @@ export default function Footer() {
                         <p className="max-w-md text-center sm:text-start text-sm leading-7 text-on-surface-variant">
                             A digital marketing agency in Saudi Arabia helping businesses grow through search, social media, content, and technology built for the local market.
                         </p>
-                        <p className="mt-1 text-sm text-on-surface-variant">Ac {new Date().getFullYear()} Nawa. All rights reserved.</p>
+                        <p className="mt-1 text-sm hidden sm:block text-on-surface-variant">Ac {new Date().getFullYear()} Nawa. All rights reserved.</p>
                     </div>
 
                     <div className="flex items-center text-center sm:items-start sm:text-start flex-col gap-6 lg:items-end lg:text-right">
@@ -160,6 +160,7 @@ export default function Footer() {
                             <Link href="/privacy" className={footerLinkClass}>Privacy Policy</Link>
                             <Link href="/terms" className={footerLinkClass}>Terms of Service</Link>
                         </div>
+                        <p className="mt-1 text-sm sm:hidden text-on-surface-variant">Ac {new Date().getFullYear()} Nawa. All rights reserved.</p>
                     </div>
                 </div>
             </div>

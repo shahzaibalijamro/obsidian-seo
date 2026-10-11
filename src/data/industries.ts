@@ -17,7 +17,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Qualified Enquiries", description: "Ask for the information agents need without making forms burdensome." },
             { title: "Campaign Consistency", description: "Keep ads, listings, and landing pages aligned with current availability." },
         ],
-        services: [{ label: "SEO", href: "/services/seo" }, { label: "Web Development", href: "/services/web-development" }, { label: "Social Media Marketing", href: "/services/social-media-marketing" }],
+        services: [{ label: "SEO", href: "/services/search-engine-optimization" }, { label: "Web Development", href: "/services/web-development" }, { label: "Social Media Marketing", href: "/services/social-media-marketing" }],
     },
     {
         slug: "healthcare-clinics", name: "Healthcare & Clinics",
@@ -28,7 +28,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Patient Access", description: "Make contact, location, and booking information easy to use on mobile." },
             { title: "Content Review", description: "Build a review process with qualified clinical owners for sensitive information." },
         ],
-        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "SEO", href: "/services/seo" }, { label: "Web Development", href: "/services/web-development" }],
+        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "Web Development", href: "/services/web-development" }],
     },
     {
         slug: "restaurants-food-beverage", name: "Restaurants & Food & Beverage",
@@ -39,7 +39,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Local Discovery", description: "Help nearby customers find the right branch or offer." },
             { title: "Campaign Landing Pages", description: "Give promotions a clear destination with relevant information." },
         ],
-        services: [{ label: "Social Media Marketing", href: "/services/social-media-marketing" }, { label: "SEO", href: "/services/seo" }, { label: "Web Development", href: "/services/web-development" }],
+        services: [{ label: "Social Media Marketing", href: "/services/social-media-marketing" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "Web Development", href: "/services/web-development" }],
     },
     {
         slug: "retail-ecommerce", name: "Retail & E-commerce",
@@ -61,7 +61,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Booking Path", description: "Reduce confusion between discovery and the reservation flow." },
             { title: "Guest Questions", description: "Answer common pre-arrival questions in clear content." },
         ],
-        services: [{ label: "Web Development", href: "/services/web-development" }, { label: "SEO", href: "/services/seo" }, { label: "Content Marketing", href: "/services/content-marketing" }],
+        services: [{ label: "Web Development", href: "/services/web-development" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "Content Marketing", href: "/services/content-marketing" }],
     },
     {
         slug: "travel-tourism", name: "Travel & Tourism",
@@ -72,7 +72,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Discovery Content", description: "Answer destination and activity questions travelers search for." },
             { title: "Booking Clarity", description: "Show availability, contact, and booking steps at the right moment." },
         ],
-        services: [{ label: "Content Marketing", href: "/services/content-marketing" }, { label: "SEO", href: "/services/seo" }, { label: "Social Media Marketing", href: "/services/social-media-marketing" }],
+        services: [{ label: "Content Marketing", href: "/services/content-marketing" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "Social Media Marketing", href: "/services/social-media-marketing" }],
     },
     {
         slug: "automotive", name: "Automotive",
@@ -83,7 +83,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Lead Routing", description: "Direct enquiries to the right location or team." },
             { title: "After-sales Content", description: "Support owners with useful maintenance and service information." },
         ],
-        services: [{ label: "SEO", href: "/services/seo" }, { label: "Web Development", href: "/services/web-development" }, { label: "Email Marketing", href: "/services/email-marketing" }],
+        services: [{ label: "SEO", href: "/services/search-engine-optimization" }, { label: "Web Development", href: "/services/web-development" }, { label: "Email Marketing", href: "/services/email-marketing" }],
     },
     {
         slug: "education", name: "Education",
@@ -94,7 +94,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Admissions Journey", description: "Make deadlines, documents, and contact options easy to find." },
             { title: "Audience Paths", description: "Separate information for prospective students, families, and partners." },
         ],
-        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "SEO", href: "/services/seo" }, { label: "Web Development", href: "/services/web-development" }],
+        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "Web Development", href: "/services/web-development" }],
     },
     {
         slug: "beauty-salons-spas", name: "Beauty, Salons & Spas",
@@ -105,7 +105,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Booking Access", description: "Make appointment options easy to find on mobile." },
             { title: "Social Proof", description: "Use approved imagery and genuine reviews to support trust." },
         ],
-        services: [{ label: "Social Media Management", href: "/services/social-media-management" }, { label: "SEO", href: "/services/seo" }, { label: "Online Reputation Management", href: "/services/online-reputation-management" }],
+        services: [{ label: "Social Media Management", href: "/services/social-media-management" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "Online Reputation Management", href: "/services/online-reputation-management" }],
     },
     {
         slug: "legal-services", name: "Legal Services",
@@ -116,7 +116,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Trust & Accuracy", description: "Use reviewed credentials, process details, and appropriate language." },
             { title: "Confidential Enquiries", description: "Make contact routes clear and collect only what the intake needs." },
         ],
-        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "SEO", href: "/services/seo" }, { label: "Web Development", href: "/services/web-development" }],
+        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "Web Development", href: "/services/web-development" }],
     },
     {
         slug: "construction-engineering", name: "Construction & Engineering",
@@ -127,7 +127,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Project Evidence", description: "Present approved work with clear scope and verified outcomes." },
             { title: "Tender Enquiries", description: "Route requests to the correct team with appropriate context." },
         ],
-        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "SEO", href: "/services/seo" }, { label: "Web Development", href: "/services/web-development" }],
+        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "Web Development", href: "/services/web-development" }],
     },
     {
         slug: "fitness-gyms", name: "Fitness & Gyms",
@@ -138,7 +138,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Membership Clarity", description: "Explain options and the next step without unnecessary friction." },
             { title: "Local Reach", description: "Help nearby audiences find the right facility or program." },
         ],
-        services: [{ label: "Social Media Marketing", href: "/services/social-media-marketing" }, { label: "SEO", href: "/services/seo" }, { label: "CRO", href: "/services/conversion-rate-optimization" }],
+        services: [{ label: "Social Media Marketing", href: "/services/social-media-marketing" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "CRO", href: "/services/conversion-rate-optimization" }],
     },
     {
         slug: "finance-fintech", name: "Finance & Fintech",
@@ -160,7 +160,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Quote Requests", description: "Collect the shipment details required for a useful response." },
             { title: "Customer Updates", description: "Connect status information and support routes where systems allow." },
         ],
-        services: [{ label: "Web Development", href: "/services/web-development" }, { label: "Business Automation", href: "/services/business-automation" }, { label: "SEO", href: "/services/seo" }],
+        services: [{ label: "Web Development", href: "/services/web-development" }, { label: "Business Automation", href: "/services/business-automation" }, { label: "SEO", href: "/services/search-engine-optimization" }],
     },
     {
         slug: "professional-services", name: "Professional Services",
@@ -171,7 +171,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Relevant Evidence", description: "Use approved examples, methods, and team expertise to support claims." },
             { title: "Enquiry Quality", description: "Guide visitors toward the right person or service." },
         ],
-        services: [{ label: "Content Marketing", href: "/services/content-marketing" }, { label: "SEO", href: "/services/seo" }, { label: "Web Development", href: "/services/web-development" }],
+        services: [{ label: "Content Marketing", href: "/services/content-marketing" }, { label: "SEO", href: "/services/search-engine-optimization" }, { label: "Web Development", href: "/services/web-development" }],
     },
     {
         slug: "manufacturing", name: "Manufacturing",
@@ -182,7 +182,7 @@ export const industryPages: IndustryContent[] = [
             { title: "Capability Evidence", description: "Present approved process and quality information clearly." },
             { title: "B2B Enquiries", description: "Capture the details needed to assess a request efficiently." },
         ],
-        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "Web Development", href: "/services/web-development" }, { label: "SEO", href: "/services/seo" }],
+        services: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "Web Development", href: "/services/web-development" }, { label: "SEO", href: "/services/search-engine-optimization" }],
     },
     {
         slug: "technology-saas", name: "Technology & SaaS",

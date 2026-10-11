@@ -4,7 +4,7 @@ import { writeClient } from '../../../../sanity/lib/client';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, company, service, message } = body;
+    const { name, email, company, service, message } = body;
 
     // Basic validation
     if (!name || !email) {
@@ -19,7 +19,6 @@ export async function POST(request: Request) {
       _type: 'contactQuery',
       name,
       email,
-      phone,
       company,
       service,
       message,

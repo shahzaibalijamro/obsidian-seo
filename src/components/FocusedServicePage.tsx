@@ -1,7 +1,6 @@
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
-import ContactSection from "@/components/ContactSection";
 import type { FocusedServiceContent } from "@/data/remaining-services";
 
 export default function FocusedServicePage({ content }: { content: FocusedServiceContent }) {
@@ -64,7 +63,6 @@ export default function FocusedServicePage({ content }: { content: FocusedServic
 
             <FAQSection title={`${content.name}: common questions`} description="A few details to help you plan the next conversation." faqs={content.faqs} />
             <CTASection title={`Let's plan your ${content.name.toLowerCase()} work`} description="Tell us about your current setup, your audience, and what you want to improve. We will help define a useful scope." buttonText="Contact Us" buttonHref="#contact" />
-            <ContactSection />
         </main>
     );
 }

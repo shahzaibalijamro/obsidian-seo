@@ -8,7 +8,7 @@ import { locationPages } from "@/data/locations";
 type Props = { params: Promise<{ city: string }> };
 
 const serviceGroups = [
-    { title: "Search", icon: "travel_explore", description: "Help people find useful answers when they look for a service like yours.", links: [{ label: "SEO", href: "/services/seo" }] },
+    { title: "Search", icon: "travel_explore", description: "Help people find useful answers when they look for a service like yours.", links: [{ label: "SEO", href: "/services/search-engine-optimization" }] },
     { title: "Social Media", icon: "campaign", description: "Connect campaigns and everyday communication to a clear customer journey.", links: [{ label: "Social Media Marketing", href: "/services/social-media-marketing" }, { label: "Social Media Management", href: "/services/social-media-management" }] },
     { title: "Content", icon: "edit_note", description: "Explain your offer with pages and messages shaped around your audience.", links: [{ label: "Content Writing", href: "/services/content-writing" }, { label: "Content Marketing", href: "/services/content-marketing" }] },
     { title: "AI & Automation", icon: "psychology", description: "Explore practical ways to connect information and workflows.", links: [{ label: "AI Integration", href: "/services/ai-integration" }] },

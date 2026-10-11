@@ -157,7 +157,7 @@ export default function ContactPage() {
                                 <div className="space-y-8">
                                     {/* Direct Channels */}
                                     <div className="border-b border-on-surface/10 pb-6">
-                                        <a href="mailto:strategy@Nawadigital.com" className="flex items-center gap-4 group mb-4">
+                                        <a href="mailto:contact@nawadigital.me" className="flex items-center gap-4 group mb-4">
                                             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                                                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>mail</span>
                                             </div>

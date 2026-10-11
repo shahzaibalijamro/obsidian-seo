@@ -13,7 +13,6 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import BlogSection from "@/components/BlogSection";
 import CTASection from "@/components/CTASection";
-import ContactSection from "@/components/ContactSection";
 import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
@@ -68,8 +67,8 @@ export default function Home() {
           description="Services designed to generate demand and fuel growth."
           theme="light"
           services={[
-            { icon: "search", title: "Search Engine Optimization", description: "Improve organic visibility through technical SEO, keyword strategy, on-page optimisation, local search, and content planning around real-world search demand.", linkText: "Explore Service", linkHref: "/services/seo" },
-            { icon: "ads_click", title: "Search Engine Marketing", description: "Reach high-intent customers through paid search campaigns focused on commercial keywords, conversion tracking, landing pages, and efficient budget utilisation.", linkText: "Explore Service", linkHref: "/services/sem" },
+            { icon: "search", title: "Search Engine Optimization", description: "Improve organic visibility through technical SEO, keyword strategy, on-page optimisation, local search, and content planning around real-world search demand.", linkText: "Explore Service", linkHref: "/services/search-engine-optimization" },
+            { icon: "ads_click", title: "Search Engine Marketing", description: "Reach high-intent customers through paid search campaigns focused on commercial keywords, conversion tracking, landing pages, and efficient budget utilisation.", linkText: "Explore Service", linkHref: "/services/search-engine-marketing" },
             { icon: "campaign", title: "Social Media Marketing", description: "Raise awareness and generate demand through platform strategy, paid social campaigns, creative direction, and performance-driven execution.", linkText: "Explore Service", linkHref: "/services/social-media-marketing" },
             { icon: "edit_document", title: "Content Writing", description: "Turn customer questions and search demand into website, landing page, and blog content that informs, ranks, and converts.", linkText: "Explore Service", linkHref: "/services/content-writing" },
             { icon: "psychology", title: "AI Integration", description: "Leverage AI that works for your business with assistants, intelligent workflows, knowledge tools, automation, and integrations built for real operational needs.", linkText: "Explore Service", linkHref: "/services/ai-integration" },
@@ -167,7 +166,6 @@ export default function Home() {
             buttonHref="#contact"
           />
         </div>
-        <ContactSection />
       </main>
       <BackToTop />
     </>

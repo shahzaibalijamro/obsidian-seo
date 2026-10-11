@@ -11,7 +11,6 @@ import IndustriesSection from "@/components/IndustriesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
-import ContactSection from "@/components/ContactSection";
 import BackToTop from "@/components/BackToTop";
 
 export default function SemPage() {
@@ -161,7 +160,6 @@ export default function SemPage() {
                     <CTASection />
                 </div>
 
-                <ContactSection />
             </main>
             <BackToTop />
         </>

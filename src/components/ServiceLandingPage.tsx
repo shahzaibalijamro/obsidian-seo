@@ -11,7 +11,6 @@ import IndustriesSection from "@/components/IndustriesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection, { type FAQItem } from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
-import ContactSection from "@/components/ContactSection";
 
 export interface ServiceLandingContent {
     slug: string;
@@ -85,7 +84,6 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
             <FeaturesSection badgeText="DELIVERABLES" title={content.closingTitle} description={content.closingDescription} features={content.closingFeatures} />
             <FAQSection title={`${content.servicesTitle}: FAQs`} description="Answers to common questions about scope, delivery, and working together." faqs={content.faqs} />
             <CTASection title={content.ctaTitle} description={content.ctaDescription} buttonText="Discuss Your Project" buttonHref="#contact" />
-            <ContactSection />
         </main>
     );
 }

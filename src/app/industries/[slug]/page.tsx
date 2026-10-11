@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/CTASection";
-import ContactSection from "@/components/ContactSection";
 import { industryPages } from "@/data/industries";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -90,6 +89,5 @@ export default async function IndustryPage({ params }: Props) {
         </section>
 
         <CTASection title={`Let's discuss your ${industry.name.toLowerCase()} goals`} description="Tell us about your audience, current digital experience, and the questions your customers need answered." buttonText="Contact Us" buttonHref="#contact" />
-        <ContactSection />
     </main>;
 }

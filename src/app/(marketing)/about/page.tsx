@@ -10,7 +10,6 @@ import ProcessSection from "@/components/ProcessSection";
 import TeamSection from "@/components/TeamSection";
 import AchievementsSection from "@/components/AchievementsSection";
 import TechStackSection from "@/components/TechStackSection";
-import ContactSection from "@/components/ContactSection";
 import BackToTop from "@/components/BackToTop";
 
 export default function About() {
@@ -135,7 +134,6 @@ export default function About() {
         <TeamSection />
         <AchievementsSection />
         <TechStackSection />
-        <ContactSection />
       </main>
       <BackToTop />
     </>
