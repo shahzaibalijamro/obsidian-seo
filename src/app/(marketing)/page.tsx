@@ -15,9 +15,14 @@ import BlogSection from "@/components/BlogSection";
 import CTASection from "@/components/CTASection";
 import BackToTop from "@/components/BackToTop";
 
+import { getCanonicalUrl } from "@/lib/seo";
+
 export const metadata: Metadata = {
   title: "NAWA | AI-Powered Digital Marketing Agency in Saudi Arabia",
   description: "NAWA is a digital marketing agency in Saudi Arabia. We connect SEO, paid media, AI automation, and web development to drive real business growth.",
+  alternates: {
+    canonical: getCanonicalUrl("/"),
+  },
 };
 
 export default function Home() {

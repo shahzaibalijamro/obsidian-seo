@@ -10,10 +10,14 @@ import IndustriesSection from "@/components/IndustriesSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import BackToTop from "@/components/BackToTop";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
     title: "SEO Company in Saudi Arabia | AI-Powered SEO",
     description: "Grow your business with an AI-powered SEO company in Saudi Arabia. Improve rankings, attract qualified traffic, and generate more leads with proven SEO",
+    alternates: {
+        canonical: getCanonicalUrl("/services/search-engine-optimization"),
+    },
 };
 
 const seoFaqs = [

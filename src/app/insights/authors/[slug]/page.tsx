@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PortableText } from '@portabletext/react';
@@ -6,12 +7,30 @@ import CTASection from "@/components/CTASection";
 import { client } from "../../../../../sanity/lib/client";
 import { authorProfileQuery } from "../../../../../sanity/lib/queries";
 import { urlForImage } from "../../../../../sanity/lib/image";
+import { getCanonicalUrl } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export const revalidate = 60;
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const author = await client.fetch(authorProfileQuery, { slug });
+
+  if (!author || !author.posts || author.posts.length === 0) {
+    return {};
+  }
+
+  return {
+    title: `${author.name} | Nawa Digital`,
+    description: author.shortBio || `Explore articles and strategic insights published by ${author.name} at Nawa Digital.`,
+    alternates: {
+      canonical: getCanonicalUrl(`/insights/authors/${slug}`),
+    },
+  };
+}
 
 export default async function AuthorProfilePage({ params }: PageProps) {
   const { slug } = await params;

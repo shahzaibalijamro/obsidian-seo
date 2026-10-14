@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import StatsSection from "@/components/StatsSection";
@@ -12,6 +14,14 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import BackToTop from "@/components/BackToTop";
+
+export const metadata: Metadata = {
+    title: "App Development Services in Saudi Arabia | Nawa Digital",
+    description: "Premium native iOS, Android, and cross-platform mobile application development engineered for scalability and engagement in Saudi Arabia.",
+    alternates: {
+        canonical: getCanonicalUrl("/services/app-development"),
+    },
+};
 
 export default function AppDevelopmentPage() {
     return (

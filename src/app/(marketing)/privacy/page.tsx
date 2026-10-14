@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import LegalPageLayout from "@/components/LegalPageLayout";
+
+export const metadata: Metadata = {
+    title: "Privacy Policy | Nawa Digital",
+    description: "Read Nawa Digital's Privacy Policy and data governance protocols.",
+    alternates: {
+        canonical: getCanonicalUrl("/privacy"),
+    },
+};
 
 export default function PrivacyPolicyPage() {
     const directoryLinks = [

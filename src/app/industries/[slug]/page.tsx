@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/CTASection";
 import { industryPages } from "@/data/industries";
+import { getCanonicalUrl } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,6 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: `Digital Marketing for ${industry.name} | Nawa Digital`,
         description: industry.description,
+        alternates: {
+            canonical: getCanonicalUrl(`/industries/${slug}`),
+        },
     };
 }
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import FocusedServicePage from "@/components/FocusedServicePage";
 import { remainingServices } from "@/data/remaining-services";
+import { getCanonicalUrl } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,6 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: `${content.name} Services in Saudi Arabia | Nawa Digital`,
         description: content.description,
+        alternates: {
+            canonical: getCanonicalUrl(`/services/${slug}`),
+        },
     };
 }
 

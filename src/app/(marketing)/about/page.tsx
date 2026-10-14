@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import StatsSection from "@/components/StatsSection";
@@ -11,6 +13,14 @@ import TeamSection from "@/components/TeamSection";
 import AchievementsSection from "@/components/AchievementsSection";
 import TechStackSection from "@/components/TechStackSection";
 import BackToTop from "@/components/BackToTop";
+
+export const metadata: Metadata = {
+  title: "About Us | Nawa Digital",
+  description: "Learn about Nawa Digital's mission, team, and approach to digital marketing, AI automation, and web development in Saudi Arabia.",
+  alternates: {
+    canonical: getCanonicalUrl("/about"),
+  },
+};
 
 export default function About() {
   return (

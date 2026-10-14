@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import StatsSection from "@/components/StatsSection";
@@ -12,6 +14,14 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import BackToTop from "@/components/BackToTop";
+
+export const metadata: Metadata = {
+    title: "Social Media Marketing Agency in Saudi Arabia | Nawa Digital",
+    description: "Results-driven social media marketing, organic content, paid campaigns, and influencer partnerships for businesses in Saudi Arabia.",
+    alternates: {
+        canonical: getCanonicalUrl("/services/social-media-marketing"),
+    },
+};
 
 const smmFaqs = [
     {

@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import { industryPages } from "@/data/industries";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
     title: "Industries We Serve | Nawa Digital",
     description: "Explore digital marketing, content, automation, and development services for seventeen industries in Saudi Arabia.",
+    alternates: {
+        canonical: getCanonicalUrl("/industries"),
+    },
 };
 
 export default function IndustriesPage() {

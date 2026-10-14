@@ -3,10 +3,14 @@ import HeroSection from "@/components/HeroSection";
 import LocationCard from "@/components/LocationCard";
 import LocationCarousel from "@/components/LocationCarousel";
 import { locationPages } from "@/data/locations";
+import { getCanonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
     title: "Locations We Serve in Saudi Arabia | Nawa Digital",
     description: "Explore Nawa Digital's Saudi service areas, including Riyadh, Jeddah, Dammam, Makkah, Madinah, and more.",
+    alternates: {
+        canonical: getCanonicalUrl("/locations"),
+    },
 };
 
 export default function LocationsPage() {

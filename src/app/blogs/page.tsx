@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import { client } from "../../../sanity/lib/client";
 import { allPostsQuery, categoriesQuery } from "../../../sanity/lib/queries";
 import BlogsClient from "./BlogsClient";
+
+export const metadata: Metadata = {
+  title: "Intelligence & Insights | Nawa Digital Blog",
+  description: "Navigating the digital frontier with strategic foresight and technical precision. Explore our latest thoughts on strategy, design, and engineering.",
+  alternates: {
+    canonical: getCanonicalUrl("/blogs"),
+  },
+};
 
 export const revalidate = 60; // Revalidate every 60 seconds
 

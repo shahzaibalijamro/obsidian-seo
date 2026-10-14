@@ -1,8 +1,10 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import ListingCard from "@/components/ListingCard";
 import { caseStudiesData } from "@/data/case-studies";
+import { getCanonicalUrl } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -13,6 +15,23 @@ export async function generateStaticParams() {
   return caseStudiesData.map((study) => ({
     id: study.id,
   }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const caseStudy = caseStudiesData.find((s) => s.id === id);
+
+  if (!caseStudy) {
+    return {};
+  }
+
+  return {
+    title: `${caseStudy.title} | Case Study | Nawa Digital`,
+    description: caseStudy.excerpt,
+    alternates: {
+      canonical: getCanonicalUrl(`/case-studies/${id}`),
+    },
+  };
 }
 
 export default async function SingleCaseStudyPage({ params }: PageProps) {

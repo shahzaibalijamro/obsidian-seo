@@ -12,7 +12,10 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+import { SITE_URL } from "@/lib/seo";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Nawa Digital - Elevating Digital Landscapes",
   description: "Premium Digital Agency",
 };

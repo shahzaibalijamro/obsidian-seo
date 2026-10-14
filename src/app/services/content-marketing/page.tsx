@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import StatsSection from "@/components/StatsSection";
@@ -12,6 +14,14 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import BackToTop from "@/components/BackToTop";
+
+export const metadata: Metadata = {
+    title: "Content Marketing Services in Saudi Arabia | Nawa Digital",
+    description: "Strategic content marketing, audience mapping, editorial frameworks, and data-driven storytelling to scale your brand authority in Saudi Arabia.",
+    alternates: {
+        canonical: getCanonicalUrl("/services/content-marketing"),
+    },
+};
 
 export default function ContentMarketingPage() {
     return (

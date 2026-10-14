@@ -9,89 +9,89 @@ export default function ContactSection() {
     "idle" | "success" | "error"
   >("idle");
 
-  
-const services = [
-  {
-    value: "search-engine-optimization",
-    label: "Search Engine Optimization",
-  },
-  {
-    value: "search-engine-marketing",
-    label: "Search Engine Marketing",
-  },
-  {
-    value: "social-media-marketing",
-    label: "Social Media Marketing",
-  },
-  {
-    value: "social-media-management",
-    label: "Social Media Management",
-  },
-  {
-    value: "content-marketing",
-    label: "Content Marketing",
-  },
-  {
-    value: "content-writing",
-    label: "Content Writing",
-  },
-  {
-    value: "email-marketing",
-    label: "Email Marketing",
-  },
-  {
-    value: "influencer-marketing",
-    label: "Influencer Marketing",
-  },
-  {
-    value: "online-reputation-management",
-    label: "Online Reputation Management",
-  },
-  {
-    value: "conversion-rate-optimization",
-    label: "Conversion Rate Optimization (CRO)",
-  },
-  {
-    value: "ai-integration",
-    label: "AI Integration",
-  },
-  {
-    value: "ai-agents",
-    label: "AI Agents",
-  },
-  {
-    value: "ai-chatbots",
-    label: "AI Chatbots",
-  },
-  {
-    value: "business-automation",
-    label: "Business Automation",
-  },
-  {
-    value: "custom-ai-solutions",
-    label: "Custom AI Solutions",
-  },
-  {
-    value: "web-development",
-    label: "Web Development",
-  },
-  {
-    value: "wordpress-development",
-    label: "WordPress Development",
-  },
-  {
-    value: "software-development",
-    label: "Software Development",
-  },
-  {
-    value: "app-development",
-    label: "App Development",
-  },
-  {
-    value: "shopify-ecommerce-development",
-    label: "Shopify / E-commerce Development",
-  },
-];
+
+  const services = [
+    {
+      value: "search-engine-optimization",
+      label: "Search Engine Optimization",
+    },
+    {
+      value: "search-engine-marketing",
+      label: "Search Engine Marketing",
+    },
+    {
+      value: "social-media-marketing",
+      label: "Social Media Marketing",
+    },
+    {
+      value: "social-media-management",
+      label: "Social Media Management",
+    },
+    {
+      value: "content-marketing",
+      label: "Content Marketing",
+    },
+    {
+      value: "content-writing",
+      label: "Content Writing",
+    },
+    {
+      value: "email-marketing",
+      label: "Email Marketing",
+    },
+    {
+      value: "influencer-marketing",
+      label: "Influencer Marketing",
+    },
+    {
+      value: "online-reputation-management",
+      label: "Online Reputation Management",
+    },
+    {
+      value: "conversion-rate-optimization",
+      label: "Conversion Rate Optimization (CRO)",
+    },
+    {
+      value: "ai-integration",
+      label: "AI Integration",
+    },
+    {
+      value: "ai-agents",
+      label: "AI Agents",
+    },
+    {
+      value: "ai-chatbots",
+      label: "AI Chatbots",
+    },
+    {
+      value: "business-automation",
+      label: "Business Automation",
+    },
+    {
+      value: "custom-ai-solutions",
+      label: "Custom AI Solutions",
+    },
+    {
+      value: "web-development",
+      label: "Web Development",
+    },
+    {
+      value: "wordpress-development",
+      label: "WordPress Development",
+    },
+    {
+      value: "software-development",
+      label: "Software Development",
+    },
+    {
+      value: "app-development",
+      label: "App Development",
+    },
+    {
+      value: "shopify-ecommerce-development",
+      label: "Shopify / E-commerce Development",
+    },
+  ];
 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -267,8 +267,8 @@ const services = [
                     </label>
                     <Select
                       name="service"
-    instanceId="service-interest"
-    inputId="service-interest-input"
+                      instanceId="service-interest"
+                      inputId="service-interest-input"
                       options={services}
                       placeholder="Select a service..."
                       maxMenuHeight={240}
@@ -300,7 +300,7 @@ const services = [
                   <div className="flex flex-col gap-4 pt-4">
                     <button
                       disabled={isSubmitting}
-                      className="w-full py-4 bg-inverse-primary text-on-primary font-label-md rounded-xl hover:bg-primary hover:text-inverse-primary transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full py-4 bg-inverse-primary text-on-primary font-label-md rounded-xl hover:bg-primary cursor-pointer transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                       type="submit"
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import StatsSection from "@/components/StatsSection";
@@ -11,6 +13,14 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import BackToTop from "@/components/BackToTop";
+
+export const metadata: Metadata = {
+    title: "Social Media Management Services in Saudi Arabia | Nawa Digital",
+    description: "Full-spectrum social media management, community building, content scheduling, and performance reporting for Saudi brands.",
+    alternates: {
+        canonical: getCanonicalUrl("/services/social-media-management"),
+    },
+};
 
 export default function SocialMediaManagementPage() {
     return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PortableText } from '@portabletext/react';
@@ -6,6 +7,7 @@ import ListingCard from "@/components/ListingCard";
 import { client } from "../../../../sanity/lib/client";
 import { postBySlugQuery, allPostsQuery } from "../../../../sanity/lib/queries";
 import { urlForImage } from "../../../../sanity/lib/image";
+import { getCanonicalUrl } from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -18,6 +20,26 @@ export async function generateStaticParams() {
   return posts.map((post: any) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await client.fetch(postBySlugQuery, { slug });
+
+  if (!blog) {
+    return {};
+  }
+
+  const title = blog.seoMetadata?.metaTitle || `${blog.title} | Nawa Digital`;
+  const description = blog.seoMetadata?.metaDescription || blog.excerpt || "Nawa Digital Insights & Blog";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: getCanonicalUrl(`/blogs/${slug}`),
+    },
+  };
 }
 
 // Custom components for Portable Text to match existing styling

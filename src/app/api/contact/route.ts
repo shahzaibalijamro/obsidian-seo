@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { writeClient } from '../../../../sanity/lib/client';
+import { sendContactNotification } from '../../../lib/email';
 
 export async function POST(request: Request) {
   try {
@@ -24,6 +25,14 @@ export async function POST(request: Request) {
       message,
       status: 'new',
     });
+
+    // Send email notification (non-blocking — Sanity record is the source of truth)
+    try {
+      await sendContactNotification({ name, email, company, service, message });
+    } catch (emailError: any) {
+      console.error('Failed to send email notification:', emailError.message);
+      // Don't fail the request — the contact was saved to Sanity successfully
+    }
 
     return NextResponse.json(
       { message: 'Contact query submitted successfully', id: result._id },

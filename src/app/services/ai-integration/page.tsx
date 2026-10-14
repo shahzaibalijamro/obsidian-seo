@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import StatsSection from "@/components/StatsSection";
@@ -12,6 +14,14 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import BackToTop from "@/components/BackToTop";
+
+export const metadata: Metadata = {
+    title: "AI Integration Services in Saudi Arabia | Nawa Digital",
+    description: "Enterprise-grade AI integration solutions, custom LLM deployments, workflow automation, and predictive modeling for businesses in Saudi Arabia.",
+    alternates: {
+        canonical: getCanonicalUrl("/services/ai-integration"),
+    },
+};
 
 export default function AIIntegrationPage() {
     return (

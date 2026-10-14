@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import { locationPages } from "@/data/locations";
+import { getCanonicalUrl } from "@/lib/seo";
 
 type Props = { params: Promise<{ city: string }> };
 
@@ -28,6 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: `Digital Marketing & Web Services in ${location.name} | Nawa Digital`,
         description: location.description,
+        alternates: {
+            canonical: getCanonicalUrl(`/locations/${city}`),
+        },
     };
 }
 

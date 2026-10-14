@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import LegalPageLayout from "@/components/LegalPageLayout";
+
+export const metadata: Metadata = {
+    title: "Terms of Service | Nawa Digital",
+    description: "Read the governing terms and service conditions for engaging with Nawa Digital.",
+    alternates: {
+        canonical: getCanonicalUrl("/terms"),
+    },
+};
 
 export default function TermsPage() {
     const directoryLinks = [

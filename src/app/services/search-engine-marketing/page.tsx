@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getCanonicalUrl } from "@/lib/seo";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
 import StatsSection from "@/components/StatsSection";
@@ -12,6 +14,14 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import BackToTop from "@/components/BackToTop";
+
+export const metadata: Metadata = {
+    title: "Search Engine Marketing (SEM) Services in Saudi Arabia | Nawa Digital",
+    description: "Paid search advertising, Google Ads management, remarketing, and performance optimization for businesses in Saudi Arabia.",
+    alternates: {
+        canonical: getCanonicalUrl("/services/search-engine-marketing"),
+    },
+};
 
 export default function SemPage() {
     return (
