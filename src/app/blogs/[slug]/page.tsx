@@ -44,6 +44,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 // Custom components for Portable Text to match existing styling
 const ptComponents = {
+  types: {
+    image: ({ value }: any) => {
+      const imageUrl = urlForImage(value)?.url();
+
+      if (!imageUrl) {
+        return null;
+      }
+
+      return (
+        <figure className="my-12">
+          <img
+            src={imageUrl}
+            alt={value.alt ?? ""}
+            className="w-full h-auto rounded-xl"
+          />
+          {value.caption && (
+            <figcaption className="mt-3 text-sm text-center text-on-surface-variant">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+  },
   block: {
     normal: ({ children }: any) => <p className="text-xl text-on-surface leading-relaxed mb-12">{children}</p>,
     h2: ({ children }: any) => <h2 className="font-headline-lg text-headline-lg text-on-surface mt-12 mb-6">{children}</h2>,
