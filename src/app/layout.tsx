@@ -35,12 +35,18 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <head>
-        <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MCQ4PCTW"></script>
-        <script>
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+        >{`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
-        </script>
+        `}</Script>
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-MCQ4PCTW"
+          strategy="afterInteractive"
+        />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body-md antialiased selection:bg-inverse-primary selection:text-on-primary bg-mesh">
