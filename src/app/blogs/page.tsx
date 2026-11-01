@@ -15,8 +15,14 @@ export const metadata: Metadata = {
 export const revalidate = 60; // Revalidate every 60 seconds
 
 export default async function BlogsPage() {
-  const posts = await client.fetch(allPostsQuery);
-  const categories = await client.fetch(categoriesQuery);
+  let posts: any[] = [];
+  let categories: any[] = [];
+  try {
+    posts = (await client.fetch(allPostsQuery)) || [];
+    categories = (await client.fetch(categoriesQuery)) || [];
+  } catch (error) {
+    console.warn("Could not fetch posts/categories from Sanity:", error);
+  }
 
   return (
     <>

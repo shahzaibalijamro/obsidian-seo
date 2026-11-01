@@ -220,8 +220,24 @@ export default function Header() {
                     <div className="hidden md:block">
                         <a href="#contact" onClick={closeMenu} className="rounded-full bg-inverse-primary px-6 py-3 font-label-md text-on-accent shadow-[var(--glow-primary-sm)] transition-all duration-300 hover:bg-accent-soft hover:text-on-accent-soft hover:shadow-[var(--glow-primary-lg)]">Request a Quote</a>
                     </div>
-                    <button ref={mobileToggleRef} type="button" className="flex h-10 w-10 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-line xl:hidden" onClick={() => { setIsMenuOpen(!isMenuOpen); setMobileOpen(null); }} aria-label={isMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMenuOpen} aria-controls="mobile-navigation">
-                        <span aria-hidden="true" className="material-symbols-outlined text-2xl">{isMenuOpen ? "close" : "menu"}</span>
+                    <button
+                        ref={mobileToggleRef}
+                        type="button"
+                        className="flex h-10 w-10 items-center justify-center rounded-full text-on-surface transition-colors hover:bg-line xl:hidden"
+                        onClick={() => { setIsMenuOpen(!isMenuOpen); setMobileOpen(null); }}
+                        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={isMenuOpen}
+                        aria-controls="mobile-navigation"
+                    >
+                        {isMenuOpen ? (
+                            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        )}
                     </button>
                 </div>
 

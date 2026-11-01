@@ -35,6 +35,15 @@ export const post = defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          description: 'Alternative text for SEO and accessibility. Describe what is in the image.',
+          validation: (Rule) => Rule.required().error('Alt text is required for SEO and accessibility.'),
+        }),
+      ],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -83,6 +92,40 @@ export const post = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'faqs',
+      title: 'Frequently Asked Questions (FAQs)',
+      description: 'Add FAQs for this article. They will display as an interactive dropdown accordion and generate Google FAQPage Schema markup.',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'faqItem',
+          title: 'FAQ Item',
+          fields: [
+            defineField({
+              name: 'question',
+              title: 'Question',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'answer',
+              title: 'Answer',
+              type: 'text',
+              rows: 3,
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'question',
+              subtitle: 'answer',
+            },
+          },
+        }),
+      ],
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Publication Date',
       type: 'datetime',
@@ -102,6 +145,12 @@ export const post = defineType({
         { name: 'metaTitle', title: 'Meta Title', type: 'string', description: 'Defaults to post title if left blank' },
         { name: 'metaDescription', title: 'Meta Description', type: 'text', description: 'Defaults to excerpt if left blank' },
         { name: 'ogImage', title: 'Open Graph Image', type: 'image', description: 'Defaults to main image if left blank' },
+        {
+          name: 'customSchema',
+          title: 'Custom Schema Markup (JSON-LD)',
+          type: 'text',
+          description: 'Optional: Paste custom JSON-LD schema (e.g. from a schema generator). Will be inserted into the page head as structured data.',
+        },
       ],
     }),
   ],

@@ -1,4 +1,4 @@
-export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "your_project_id_here";
+export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "your-project-id";
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 export const apiVersion = "2024-03-01"; // Use current date or a fixed date for API version
 

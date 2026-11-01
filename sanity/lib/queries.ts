@@ -37,8 +37,10 @@ export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][
   "mainImage": mainImage,
   excerpt,
   publishedAt,
+  _updatedAt,
   estimatedReadTime,
-  seoMetadata
+  seoMetadata,
+  faqs
 }`;
 
 // Get an author and all their published posts by slug
