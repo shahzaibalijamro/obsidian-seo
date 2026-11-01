@@ -184,7 +184,13 @@ export default function Header() {
                         {desktopOpen === "locations" && (
                             <div className="absolute left-1/2 top-full z-50 w-[420px] -translate-x-1/2 pt-5">
                                 <div id="desktop-locations-menu" className="max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-3xl border border-line bg-surface/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-2xl">
-                                    <p className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">Locations</p>
+                                    <div className="flex items-center justify-between pb-2 mb-3 border-b border-line-subtle px-3">
+                                        <p className="font-label-md font-semibold text-primary">Locations</p>
+                                        <Link href="/locations" onClick={closeMenu} className="text-xs font-semibold text-primary hover:underline inline-flex items-center gap-1">
+                                            <span>View All Cities</span>
+                                            <span aria-hidden="true">&rarr;</span>
+                                        </Link>
+                                    </div>
                                     <div className="grid grid-cols-2 gap-x-4">
                                         {locationColumns.map((column, index) => (
                                             <div key={index} className="min-w-0">
@@ -201,7 +207,13 @@ export default function Header() {
                         {desktopOpen === "industries" && (
                             <div className="absolute left-1/2 top-full z-50 w-[620px] -translate-x-1/2 pt-5">
                                 <div id="desktop-industries-menu" className="max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-3xl border border-line bg-surface/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-2xl">
-                                    <p className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">Industries</p>
+                                    <div className="flex items-center justify-between pb-2 mb-3 border-b border-line-subtle px-3">
+                                        <p className="font-label-md font-semibold text-primary">Industries</p>
+                                        <Link href="/industries" onClick={closeMenu} className="text-xs font-semibold text-primary hover:underline inline-flex items-center gap-1">
+                                            <span>View All Industries</span>
+                                            <span aria-hidden="true">&rarr;</span>
+                                        </Link>
+                                    </div>
                                     <div className="grid grid-cols-2 gap-x-4">
                                         {industryColumns.map((column, index) => (
                                             <div key={index} className="min-w-0">
@@ -242,8 +254,24 @@ export default function Header() {
                 </div>
 
                 {desktopOpen === "services" && (
-                    <div id="desktop-services-menu" className="absolute left-1/2 top-full z-50 grid max-h-[calc(100dvh-5rem-1rem)] w-[min(1100px,calc(100vw-48px))] -translate-x-1/2 grid-cols-4 gap-5 overflow-y-auto rounded-3xl border border-line bg-surface/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-2xl">
-                        {serviceGroups.map((group) => <div key={group.title} className="min-w-0"><p className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">{group.title}</p><div>{group.items.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} />)}</div></div>)}
+                    <div id="desktop-services-menu" className="absolute left-1/2 top-full z-50 w-[min(1100px,calc(100vw-48px))] -translate-x-1/2 overflow-y-auto max-h-[calc(100dvh-5rem-1rem)] rounded-3xl border border-line bg-surface/95 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-2xl">
+                        <div className="flex items-center justify-between pb-4 mb-5 border-b border-line-subtle">
+                            <div>
+                                <span className="font-label-md font-semibold text-primary text-xs uppercase tracking-wider">Services Hub</span>
+                                <p className="text-xs text-on-surface-variant mt-0.5">Explore our full suite of technical, marketing, and automation services.</p>
+                            </div>
+                            <Link
+                                href="/services"
+                                onClick={closeMenu}
+                                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-on-accent hover:bg-primary bg-primary/10 px-3.5 py-1.5 rounded-full transition-all duration-200"
+                            >
+                                <span>Explore All Services</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </Link>
+                        </div>
+                        <div className="grid grid-cols-4 gap-5">
+                            {serviceGroups.map((group) => <div key={group.title} className="min-w-0"><p className="mb-2 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">{group.title}</p><div>{group.items.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} />)}</div></div>)}
+                        </div>
                     </div>
                 )}
             </div>
@@ -253,9 +281,48 @@ export default function Header() {
                 <div className="menu-orb pointer-events-none absolute bottom-0 right-1/4 z-0 h-[500px] w-[500px] rounded-full bg-inverse-primary/20 blur-[120px]" />
                 <div className="h-20 w-full flex-shrink-0" />
                 <div className="relative z-10 flex flex-1 flex-col overflow-y-auto px-margin-mobile pb-24 pt-4">
-                    {mobileAccordion("services", "Services", "grid_view", <div className="space-y-5">{serviceGroups.map((group) => <div key={group.title}><p className="mb-1 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">{group.title}</p>{group.items.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />)}</div>)}</div>)}
-                    {mobileAccordion("locations", "Locations", "location_on", locations.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />))}
-                    {mobileAccordion("industries", "Industries", "domain", industries.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />))}
+                    {mobileAccordion("services", "Services", "grid_view", <div className="space-y-5">
+                        <Link
+                            href="/services"
+                            onClick={closeMenu}
+                            className="flex items-center justify-between p-3.5 rounded-xl bg-primary/10 border border-primary/20 text-primary font-label-md text-sm font-semibold hover:bg-primary hover:text-on-accent transition-all duration-200"
+                        >
+                            <span className="flex items-center gap-2">
+                                <span aria-hidden="true" className="material-symbols-outlined text-base">dashboard_customize</span>
+                                <span>Explore All Services Overview</span>
+                            </span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </Link>
+                        {serviceGroups.map((group) => <div key={group.title}><p className="mb-1 border-b border-line-subtle px-3 pb-2 font-label-md font-semibold text-primary">{group.title}</p>{group.items.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />)}</div>)}
+                    </div>)}
+                    {mobileAccordion("locations", "Locations", "location_on", <div>
+                        <Link
+                            href="/locations"
+                            onClick={closeMenu}
+                            className="flex items-center justify-between p-3.5 mb-3 rounded-xl bg-primary/10 border border-primary/20 text-primary font-label-md text-sm font-semibold hover:bg-primary hover:text-on-accent transition-all duration-200"
+                        >
+                            <span className="flex items-center gap-2">
+                                <span aria-hidden="true" className="material-symbols-outlined text-base">map</span>
+                                <span>View All Saudi Cities</span>
+                            </span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </Link>
+                        {locations.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />)}
+                    </div>)}
+                    {mobileAccordion("industries", "Industries", "domain", <div>
+                        <Link
+                            href="/industries"
+                            onClick={closeMenu}
+                            className="flex items-center justify-between p-3.5 mb-3 rounded-xl bg-primary/10 border border-primary/20 text-primary font-label-md text-sm font-semibold hover:bg-primary hover:text-on-accent transition-all duration-200"
+                        >
+                            <span className="flex items-center gap-2">
+                                <span aria-hidden="true" className="material-symbols-outlined text-base">apartment</span>
+                                <span>View All Industries</span>
+                            </span>
+                            <span aria-hidden="true">&rarr;</span>
+                        </Link>
+                        {industries.map((item) => <MenuItem key={item.label} item={item} onNavigate={closeMenu} mobile />)}
+                    </div>)}
                     <div className="my-3 h-px bg-line-subtle" />
                     {navLinks.map((link) => <Link key={link.href} href={link.href} onClick={closeMenu} className="py-3 font-display-lg text-2xl text-on-surface transition-colors hover:text-primary">{link.label}</Link>)}
                     <a href="#contact" onClick={closeMenu} className="mt-6 w-full rounded-full bg-inverse-primary px-8 py-4 text-center font-label-md text-on-accent transition-all duration-300 hover:bg-accent-soft hover:text-on-accent-soft md:hidden">Request a Quote</a>
