@@ -93,6 +93,54 @@ const ptComponents = {
         </figure>
       );
     },
+    table: ({ value }: any) => {
+      const rows = value?.rows || [];
+      if (!rows || rows.length === 0) return null;
+
+      // Extract cells safely whether row is object { cells: [...] } or array
+      const formattedRows = rows.map((row: any) => {
+        if (Array.isArray(row)) return row;
+        if (Array.isArray(row?.cells)) return row.cells;
+        return [];
+      });
+
+      if (formattedRows.length === 0) return null;
+
+      const headerRow = formattedRows[0] || [];
+      const bodyRows = formattedRows.slice(1);
+
+      return (
+        <div className="my-8 overflow-x-auto rounded-xl border border-on-surface/10 bg-surface-container/20">
+          {value.caption && (
+            <div className="px-4 py-2.5 font-label-md text-sm font-semibold text-primary border-b border-on-surface/10 bg-surface-container-high/40">
+              {value.caption}
+            </div>
+          )}
+          <table className="w-full border-collapse text-left text-sm md:text-base text-on-surface">
+            <thead>
+              <tr className="border-b border-on-surface/10 bg-surface-container-high/60">
+                {headerRow.map((cell: any, i: number) => (
+                  <th key={i} className="px-4 py-3 font-semibold text-on-surface">
+                    {typeof cell === 'string' ? cell : cell?.text || ''}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-on-surface/5">
+              {bodyRows.map((row: any[], rowIndex: number) => (
+                <tr key={rowIndex} className="hover:bg-on-surface/5 transition-colors">
+                  {row.map((cell: any, cellIndex: number) => (
+                    <td key={cellIndex} className="px-4 py-3 text-on-surface-variant">
+                      {typeof cell === 'string' ? cell : cell?.text || ''}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
   },
   block: {
     normal: ({ children }: any) => (
@@ -321,7 +369,7 @@ export default async function SingleBlogPage({ params }: PageProps) {
 
           {/* Hero Image */}
           {mainImageUrl && (
-            <div className="w-full aspect-video rounded-xl overflow-hidden mb-section-padding border border-on-surface/10 relative group">
+            <div className="w-full aspect-video rounded-xl overflow-hidden mb-8 md:mb-12 border border-on-surface/10 relative group">
               <img
                 src={mainImageUrl}
                 alt={blog.mainImage?.alt || blog.title}
@@ -395,11 +443,6 @@ export default async function SingleBlogPage({ params }: PageProps) {
           </div>
         </article>
 
-        {/* Service Integration CTA */}
-        <section className="mt-section-padding">
-          <CTASection />
-        </section>
-
         {/* Related Insights Grid */}
         <section className="mt-section-padding max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <h3 className="font-headline-md text-headline-md text-on-surface mb-12 border-b border-on-surface/10 pb-4">
@@ -420,6 +463,11 @@ export default async function SingleBlogPage({ params }: PageProps) {
               />
             ))}
           </div>
+        </section>
+
+        {/* Service Integration CTA */}
+        <section className="mt-section-padding">
+          <CTASection />
         </section>
       </main>
     </>

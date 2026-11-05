@@ -88,6 +88,61 @@ export const post = defineType({
             }),
           ],
         }),
+        defineArrayMember({
+          type: 'object',
+          name: 'table',
+          title: 'Table',
+          fields: [
+            defineField({
+              name: 'caption',
+              title: 'Table Caption (Optional)',
+              type: 'string',
+            }),
+            defineField({
+              name: 'rows',
+              title: 'Table Rows (First row will be treated as header)',
+              type: 'array',
+              of: [
+                defineArrayMember({
+                  type: 'object',
+                  name: 'row',
+                  title: 'Row',
+                  fields: [
+                    defineField({
+                      name: 'cells',
+                      title: 'Cells (Columns)',
+                      type: 'array',
+                      of: [{ type: 'string' }],
+                    }),
+                  ],
+                  preview: {
+                    select: {
+                      cells: 'cells',
+                    },
+                    prepare(selection) {
+                      const { cells } = selection;
+                      return {
+                        title: Array.isArray(cells) && cells.length > 0 ? cells.join(' | ') : 'Empty Row',
+                      };
+                    },
+                  },
+                }),
+              ],
+            }),
+          ],
+          preview: {
+            select: {
+              caption: 'caption',
+              rows: 'rows',
+            },
+            prepare({ caption, rows }) {
+              return {
+                title: caption || 'Data Table',
+                subtitle: `${rows?.length || 0} rows`,
+              };
+            },
+          },
+        }),
       ],
       validation: (Rule) => Rule.required(),
     }),

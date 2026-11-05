@@ -152,36 +152,11 @@ export default function ContactSection() {
                   <span className="material-symbols-outlined text-primary text-2xl">
                     mail
                   </span>
-                  <p className="font-body-md text-on-surface">
+                  <a
+                    href="mailto:contact@nawadigital.me"
+                    className="font-body-md text-on-surface hover:text-primary transition-colors underline underline-offset-4"
+                  >
                     contact@nawadigital.me
-                  </p>
-                </div>
-                <div className="flex items-center gap-4 mt-8 ml-2">
-                  <a
-                    href="#"
-                    className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 transition-all duration-300"
-                  >
-                    <span className="material-symbols-outlined">facebook</span>
-                  </a>
-                  <a
-                    href="#"
-                    className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 transition-all duration-300"
-                  >
-                    <span className="material-symbols-outlined">
-                      photo_camera
-                    </span>
-                  </a>
-                  <a
-                    href="#"
-                    className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 transition-all duration-300"
-                  >
-                    <span className="material-symbols-outlined">work</span>
-                  </a>
-                  <a
-                    href="#"
-                    className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 transition-all duration-300"
-                  >
-                    <span className="material-symbols-outlined">close</span>
                   </a>
                 </div>
               </div>

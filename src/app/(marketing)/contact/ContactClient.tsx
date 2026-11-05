@@ -25,26 +25,45 @@ export default function ContactClient() {
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus("submitting");
 
-        // Simulate API call
-        setTimeout(() => {
-            setStatus("success");
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                company: "",
-                service: "",
-                budget: "",
-                timeline: "",
-                message: ""
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    company: formData.company,
+                    service: formData.service,
+                    message: `[Phone: ${formData.phone || "N/A"}] [Budget: ${formData.budget || "N/A"}] [Timeline: ${formData.timeline || "N/A"}]\n\n${formData.message}`,
+                }),
             });
-            // Reset status after a few seconds
-            setTimeout(() => setStatus("idle"), 5000);
-        }, 1500);
+
+            if (res.ok) {
+                setStatus("success");
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    company: "",
+                    service: "",
+                    budget: "",
+                    timeline: "",
+                    message: ""
+                });
+                setTimeout(() => setStatus("idle"), 5000);
+            } else {
+                setStatus("idle");
+                alert("Failed to submit inquiry. Please try again or email us directly at contact@nawadigital.me");
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            setStatus("idle");
+            alert("An error occurred. Please contact us at contact@nawadigital.me");
+        }
     };
 
     return (
@@ -104,10 +123,25 @@ export default function ContactClient() {
                                                 <label className="block font-label-md text-on-surface-variant mb-2 ml-2" htmlFor="service">Primary Interest *</label>
                                                 <select id="service" name="service" value={formData.service} onChange={handleChange} className="form-input-Nawa w-full text-body-md appearance-none bg-surface-variant/20" required>
                                                     <option value="" disabled>Select Primary Interest...</option>
-                                                    <option value="seo">Search Dominance</option>
-                                                    <option value="dev">Platform Architecture</option>
-                                                    <option value="ai">Neural Analytics</option>
-                                                    <option value="marketing">Digital Marketing</option>
+                                                    <option value="Search Engine Optimization (SEO)">Search Engine Optimization (SEO)</option>
+                                                    <option value="Search Engine Marketing (SEM)">Search Engine Marketing (SEM)</option>
+                                                    <option value="Social Media Marketing">Social Media Marketing</option>
+                                                    <option value="Social Media Management">Social Media Management</option>
+                                                    <option value="Content Marketing">Content Marketing</option>
+                                                    <option value="Content Writing">Content Writing</option>
+                                                    <option value="Email Marketing">Email Marketing</option>
+                                                    <option value="Influencer Marketing">Influencer Marketing</option>
+                                                    <option value="Online Reputation Management">Online Reputation Management</option>
+                                                    <option value="Conversion Rate Optimization (CRO)">Conversion Rate Optimization (CRO)</option>
+                                                    <option value="AI Integration">AI Integration</option>
+                                                    <option value="AI Agents & Chatbots">AI Agents & Chatbots</option>
+                                                    <option value="Business Automation">Business Automation</option>
+                                                    <option value="Custom AI Solutions">Custom AI Solutions</option>
+                                                    <option value="Web Development">Web Development</option>
+                                                    <option value="WordPress Development">WordPress Development</option>
+                                                    <option value="Software Development">Software Development</option>
+                                                    <option value="App Development">App Development</option>
+                                                    <option value="Shopify / E-commerce Development">Shopify / E-commerce Development</option>
                                                 </select>
                                             </div>
                                             <div>
@@ -153,35 +187,26 @@ export default function ContactClient() {
                         <div className="lg:col-span-5 flex flex-col gap-gutter">
                             {/* Contact Details Card */}
                             <div className="glass-panel p-8 md:p-12 flex-grow">
-                                <h3 className="font-headline-md text-headline-md text-on-surface mb-8">Global Hubs</h3>
+                                <h3 className="font-headline-md text-headline-md text-on-surface mb-8">Direct Contact</h3>
                                 <div className="space-y-8">
                                     {/* Direct Channels */}
-                                    <div className="border-b border-on-surface/10 pb-6">
-                                        <a href="mailto:contact@nawadigital.me" className="flex items-center gap-4 group mb-4">
+                                    <div className="space-y-6">
+                                        <a href="mailto:contact@nawadigital.me" className="flex items-center gap-4 group">
                                             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                                                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>mail</span>
                                             </div>
                                             <div>
-                                                <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Electronic Comm</p>
-                                                <p className="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors break-all">strategy@Nawa.com</p>
+                                                <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Email</p>
+                                                <p className="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors break-all">contact@nawadigital.me</p>
                                             </div>
                                         </a>
-                                        <a href="tel:+12125550198" className="flex items-center gap-4 group mb-4">
-                                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
-                                                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>call</span>
-                                            </div>
-                                            <div>
-                                                <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Voice Protocol</p>
-                                                <p className="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">+1 (212) 555-0198</p>
-                                            </div>
-                                        </a>
-                                        <div className="flex items-center gap-4 group mb-4">
+                                        <div className="flex items-center gap-4 group">
                                             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                                                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
                                             </div>
                                             <div>
-                                                <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Business Hours</p>
-                                                <p className="font-body-lg text-body-lg text-on-surface">24/7 Monitoring</p>
+                                                <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Working Hours</p>
+                                                <p className="font-body-lg text-body-lg text-on-surface">Sunday – Thursday (9:00 AM – 6:00 PM AST)</p>
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-4 group">
@@ -190,32 +215,7 @@ export default function ContactClient() {
                                             </div>
                                             <div>
                                                 <p className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Response Time</p>
-                                                <p className="font-body-lg text-body-lg text-on-surface">&lt; 4 Hours</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Locations */}
-                                    <div className="space-y-4">
-                                        <div className="flex items-start gap-4">
-                                            <span className="material-symbols-outlined text-secondary mt-1">location_on</span>
-                                            <div>
-                                                <p className="font-label-md text-label-md text-on-surface">New York</p>
-                                                <p className="font-body-md text-body-md text-on-surface-variant text-sm">Financial District, NYC</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-start gap-4">
-                                            <span className="material-symbols-outlined text-secondary mt-1">location_on</span>
-                                            <div>
-                                                <p className="font-label-md text-label-md text-on-surface">London</p>
-                                                <p className="font-body-md text-body-md text-on-surface-variant text-sm">Canary Wharf, LDN</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-start gap-4">
-                                            <span className="material-symbols-outlined text-secondary mt-1">location_on</span>
-                                            <div>
-                                                <p className="font-label-md text-label-md text-on-surface">Singapore</p>
-                                                <p className="font-body-md text-body-md text-on-surface-variant text-sm">Marina Bay, SGP</p>
+                                                <p className="font-body-lg text-body-lg text-on-surface">&lt; 24 Hours</p>
                                             </div>
                                         </div>
                                     </div>
@@ -263,27 +263,6 @@ export default function ContactClient() {
                 <div className="-top-20 relative">
                     <FAQSection />
                 </div>
-
-                {/* 6. Social Media Section */}
-                <section className="py-16 bg-mesh">
-                    <div className="max-w-container-max mx-auto px-margin-desktop text-center">
-                        <h3 className="font-headline-md text-2xl text-on-surface mb-8">Connect With The Architects</h3>
-                        <div className="flex justify-center items-center gap-6">
-                            <a className="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 hover:-translate-y-1 transition-all duration-300" href="#">
-                                <span className="material-symbols-outlined text-2xl">work</span>
-                            </a>
-                            <a className="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 hover:-translate-y-1 transition-all duration-300" href="#">
-                                <span className="material-symbols-outlined text-2xl">close</span>
-                            </a>
-                            <a className="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 hover:-translate-y-1 transition-all duration-300" href="#">
-                                <span className="material-symbols-outlined text-2xl">photo_camera</span>
-                            </a>
-                            <a className="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/30 hover:-translate-y-1 transition-all duration-300" href="#">
-                                <span className="material-symbols-outlined text-2xl">forum</span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
 
                 {/* 7. Final CTA Section */}
                 <div className="">
