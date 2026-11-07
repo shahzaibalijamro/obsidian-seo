@@ -21,6 +21,13 @@ export const allPostsQuery = groq`*[_type == "post"] | order(publishedAt desc) {
   estimatedReadTime
 }`;
 
+// Lightweight query specifically for dynamic sitemap generation
+export const sitemapPostsQuery = groq`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+  "slug": slug.current,
+  publishedAt,
+  _updatedAt
+}`;
+
 // Get a single blog post by slug
 export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][0] {
   _id,

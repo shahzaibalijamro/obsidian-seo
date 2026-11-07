@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL, getCanonicalUrl } from '@/lib/seo';
 import { client } from '../../sanity/lib/client';
-import { allPostsQuery } from '../../sanity/lib/queries';
+import { sitemapPostsQuery } from '../../sanity/lib/queries';
 import { groq } from 'next-sanity';
 import { remainingServices } from '@/data/remaining-services';
 import { industryPages } from '@/data/industries';
@@ -27,6 +27,9 @@ const authorsWithPostsQuery = groq`*[_type == "author" && isActive == true && co
   "slug": slug.current,
   _updatedAt
 }`;
+
+// Revalidate sitemap at most once every 60 seconds (matches blog ISR config)
+export const revalidate = 60;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date();
@@ -132,13 +135,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 7. Blog Posts from Sanity
   let blogRoutes: MetadataRoute.Sitemap = [];
   try {
-    const posts = await client.fetch(allPostsQuery);
+    const posts = await client.fetch(sitemapPostsQuery, {}, { next: { revalidate: 60 } });
     if (Array.isArray(posts)) {
       blogRoutes = posts
         .filter((post: any) => post?.slug)
         .map((post: any) => ({
           url: getCanonicalUrl(`/blogs/${post.slug}`),
-          lastModified: post.publishedAt ? new Date(post.publishedAt) : currentDate,
+          lastModified: post._updatedAt
+            ? new Date(post._updatedAt)
+            : post.publishedAt
+              ? new Date(post.publishedAt)
+              : currentDate,
           changeFrequency: 'monthly',
           priority: 0.7,
         }));
@@ -150,7 +157,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 8. Authors from Sanity (only active authors with at least one published post)
   let authorRoutes: MetadataRoute.Sitemap = [];
   try {
-    const authors = await client.fetch(authorsWithPostsQuery);
+    const authors = await client.fetch(authorsWithPostsQuery, {}, { next: { revalidate: 60 } });
     if (Array.isArray(authors)) {
       authorRoutes = authors
         .filter((author: any) => author?.slug)
